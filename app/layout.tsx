@@ -11,9 +11,14 @@ export const metadata: Metadata = {
 	description: 'Mufeed e aam Dawakhana – compassionate, community-first care across Sindh.',
 	metadataBase: new URL(siteUrl),
 	icons: {
-		icon: '/favicon.ico',
+		icon: [
+			{ url: '/favicon.ico', sizes: 'any' },
+			{ url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+		],
 		shortcut: '/favicon.ico',
-		apple: '/favicon.ico',
+		apple: [
+			{ url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+		],
 	},
 	alternates: {
 		canonical: '/',
@@ -38,8 +43,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang="en">
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="any" />
+				<link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" type="image/png" />
 				<link rel="shortcut icon" href="/favicon.ico" />
-				<link rel="apple-touch-icon" href="/favicon.ico" />
+				<link rel="apple-touch-icon" href="/android-chrome-192x192.png" />
+				<link rel="manifest" href="/site.webmanifest" />
+				<meta name="theme-color" content="#e11d48" />
+				<meta name="msapplication-TileColor" content="#e11d48" />
 			</head>
 			<body>{children}</body>
 		</html>

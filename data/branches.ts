@@ -33,7 +33,7 @@ export const branches: Branch[] = [
 		],
 		imageUrl: '/images/branches/karachi.jpg',
 		gmapUrl: 'https://maps.app.goo.gl/kwN2x2WBLwrKtSDQ6',
-		gmapEmbedUrl: 'https://www.google.com/maps?q=Karachi%20Clinic&output=embed',
+		gmapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.518106634938!2d67.101863!3d24.914413999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338d10a39de55%3A0x43611f2c5ce26f7d!2sMufeed-e-Aam%20Dawakhana!5e0!3m2!1sen!2sde!4v1759531374884!5m2!1sen!2sde',
 		facebookUrl: 'https://www.facebook.com/share/1QQQJiH4My/',
 	},
 	{
@@ -52,7 +52,7 @@ export const branches: Branch[] = [
 		],
 		imageUrl: '/images/branches/hyderabad.jpg',
 		gmapUrl: 'https://maps.app.goo.gl/C77nysj32cAh81VS8',
-		gmapEmbedUrl: 'https://www.google.com/maps?q=Hyderabad%20Clinic&output=embed',
+		gmapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.5874881876534!2d68.3640484!3d25.3851382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394c70f1f99d2903%3A0xe682615fe8abe1d9!2sMufeed-e-Aam%20Dawakhana!5e0!3m2!1sen!2sde!4v1759531400633!5m2!1sen!2sde',
 		facebookUrl: 'https://www.facebook.com/share/1QQQJiH4My/',
 	},
 	{
@@ -71,7 +71,7 @@ export const branches: Branch[] = [
 		],
 		imageUrl: '/images/branches/mirpurkhas.jpg',
 		gmapUrl: 'https://maps.app.goo.gl/uo7rv7dj614TVjYV6',
-		gmapEmbedUrl: 'https://www.google.com/maps?q=Mirpurkhas%20Clinic&output=embed',
+		gmapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3600.316462219741!2d69.021498!3d25.5278335!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394eac19a6b7c0a7%3A0x9f4ccc2bd889b33e!2sMufeed-e-Aam%20Dawakhana!5e0!3m2!1sen!2sde!4v1759531414108!5m2!1sen!2sde',
 		facebookUrl: 'https://www.facebook.com/share/1QQQJiH4My/',
 	},
 	{
@@ -90,7 +90,7 @@ export const branches: Branch[] = [
 		],
 		imageUrl: '/images/branches/dadu.jpg',
 		gmapUrl: 'https://maps.app.goo.gl/UPuzYFShgE2hGkMj6',
-		gmapEmbedUrl: 'https://www.google.com/maps?q=Dadu%2C%20Sindh%2C%20Pakistan&output=embed',
+		gmapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3563.173676244486!2d67.7818056!3d26.7388333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDQ0JzE5LjgiTiA2N8KwNDYnNTQuNSJF!5e0!3m2!1sen!2sde!4v1759531427256!5m2!1sen!2sde',
 		facebookUrl: 'https://www.facebook.com/share/1QQQJiH4My/',
 	},
 ]; 

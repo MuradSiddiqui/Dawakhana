@@ -1,0 +1,22 @@
+{
+    "name": "Mufeed e aam Dawakhana",
+    "short_name": "Mufeed e aam",
+    "description": "Compassionate, community-first healthcare across Sindh",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon.ico",
+            "sizes": "16x16 32x32",
+            "type": "image/x-icon"
+        }
+    ],
+    "theme_color": "#e11d48",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/"
+}

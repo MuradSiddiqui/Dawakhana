@@ -1,12 +1,80 @@
-import React from 'react';
-import { Phone, Mail, MapPin, User, Clock, Building, MessageCircle } from 'lucide-react';
+'use client';
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, User, Clock, Building, MessageCircle, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { contact } from '../data/contact';
 
 export default function Contact() {
-	// Convert local PK number 0300 2785888 -> 923002785888 for wa.me
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		phone: '',
+		subject: '',
+		message: ''
+	});
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
 	const raw = contact.mainPhone.replace(/[^0-9]/g, '');
 	const wa = raw.startsWith('0') ? `92${raw.slice(1)}` : (raw.startsWith('92') ? raw : `92${raw}`);
 	const waLink = `https://wa.me/${wa}?text=${encodeURIComponent('Assalamualaikum, I would like to inquire.')}`;
+
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { name, value } = e.target;
+		setFormData(prev => ({
+			...prev,
+			[name]: value
+		}));
+	};
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault();
+		setIsSubmitting(true);
+		setSubmitStatus('idle');
+
+		try {
+	
+			const message = `*New Contact Form Submission*
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone || 'Not provided'}
+*Subject:* ${formData.subject || 'General Inquiry'}
+*Message:* ${formData.message}
+
+---
+Sent from Mufeed e aam Dawakhana website`;
+
+			const whatsappUrl = `https://wa.me/${wa}?text=${encodeURIComponent(message)}`;
+			
+
+			window.open(whatsappUrl, '_blank');
+			
+
+			const emailSubject = `Contact Form: ${formData.subject || 'General Inquiry'}`;
+			const emailBody = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\n\nMessage:\n${formData.message}`;
+			const emailUrl = `mailto:${contact.email}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+			
+
+			setSubmitStatus('success');
+			
+	
+			setTimeout(() => {
+				setFormData({
+					name: '',
+					email: '',
+					phone: '',
+					subject: '',
+					message: ''
+				});
+				setSubmitStatus('idle');
+			}, 3000);
+
+		} catch (error) {
+			setSubmitStatus('error');
+		} finally {
+			setIsSubmitting(false);
+		}
+	};
 
 	return (
 		<div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-sm border border-gray-100">
@@ -16,7 +84,7 @@ export default function Contact() {
 			</div>
 			
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-				{/* Contact Information */}
+			
 				<div className="space-y-6">
 					<div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
 						<h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
@@ -86,7 +154,7 @@ export default function Contact() {
 						</div>
 					</div>
 
-					<div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+					{/* <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
 						<h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
 							<Clock className="h-5 w-5 text-rose-700" />
 							Quick Contact
@@ -109,19 +177,43 @@ export default function Contact() {
 								WhatsApp
 							</a>
 						</div>
-					</div>
+					</div> */}
 				</div>
 
-				{/* Contact Form */}
+
 				<div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
 					<h3 className="text-xl font-semibold text-gray-900 mb-6">Send us a Message</h3>
-					<form method="GET" action={`mailto:${contact.email}`} encType="text/plain" className="space-y-4">
+					
+
+					{submitStatus === 'success' && (
+						<div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
+							<CheckCircle className="h-5 w-5 text-green-600" />
+							<div>
+								<p className="text-green-800 font-medium">Message sent successfully!</p>
+								<p className="text-green-600 text-sm">WhatsApp should open with your message. If not, please try again.</p>
+							</div>
+						</div>
+					)}
+					
+					{submitStatus === 'error' && (
+						<div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
+							<AlertCircle className="h-5 w-5 text-red-600" />
+							<div>
+								<p className="text-red-800 font-medium">Something went wrong</p>
+								<p className="text-red-600 text-sm">Please try again or contact us directly.</p>
+							</div>
+						</div>
+					)}
+					
+					<form onSubmit={handleSubmit} className="space-y-4">
 						<div>
 							<label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
 							<input 
 								id="name" 
 								name="name" 
 								type="text" 
+								value={formData.name}
+								onChange={handleInputChange}
 								required 
 								className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors" 
 								placeholder="Enter your full name"
@@ -134,6 +226,8 @@ export default function Contact() {
 								id="email" 
 								name="email" 
 								type="email" 
+								value={formData.email}
+								onChange={handleInputChange}
 								required 
 								className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors" 
 								placeholder="Enter your email address"
@@ -146,6 +240,8 @@ export default function Contact() {
 								id="phone" 
 								name="phone" 
 								type="tel" 
+								value={formData.phone}
+								onChange={handleInputChange}
 								className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors" 
 								placeholder="Enter your phone number"
 							/>
@@ -157,6 +253,8 @@ export default function Contact() {
 								id="subject" 
 								name="subject" 
 								type="text" 
+								value={formData.subject}
+								onChange={handleInputChange}
 								className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors" 
 								placeholder="What is this regarding?"
 							/>
@@ -168,6 +266,8 @@ export default function Contact() {
 								id="message" 
 								name="message" 
 								rows={4} 
+								value={formData.message}
+								onChange={handleInputChange}
 								required
 								className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition-colors resize-none" 
 								placeholder="Please describe your inquiry or appointment request..."
@@ -176,11 +276,25 @@ export default function Contact() {
 						
 						<button 
 							type="submit" 
-							className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-rose-700 text-white font-medium rounded-lg hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-colors"
+							disabled={isSubmitting}
+							className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-rose-700 text-white font-medium rounded-lg hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
 						>
-							<Mail className="h-4 w-4" />
-							Send Message
+							{isSubmitting ? (
+								<>
+									<div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+									Sending...
+								</>
+							) : (
+								<>
+									<Send className="h-4 w-4" />
+									Send via WhatsApp
+								</>
+							)}
 						</button>
+						
+						<p className="text-xs text-gray-500 text-center mt-3">
+							Your message will be sent via WhatsApp to our clinic directly.
+						</p>
 					</form>
 				</div>
 			</div>
