@@ -8,7 +8,7 @@ export default function Header() {
 		<header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg">
 			<div className="container-site flex items-center justify-between h-20">
 				<div className="flex items-center gap-4">
-					<img src="/logo.png" alt="Clinic logo" className="h-12 w-12 rounded-lg shadow-md" />
+					<img src="/logo.png" alt="Clinic logo" className="h-12 w-12 rounded-lg" />
 					<span className="text-xl font-bold text-gray-900">Mufeed e aam Dawakhana</span>
 				</div>
 				<nav className="hidden md:flex items-center gap-1">

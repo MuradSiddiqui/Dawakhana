@@ -89,8 +89,8 @@ export const branches: Branch[] = [
 			{ day: 'Sun', open: 'Closed', close: 'Closed' },
 		],
 		imageUrl: '/images/branches/dadu.jpg',
-		gmapUrl: 'https://maps.app.goo.gl/1ZBsEuA9vAy2o3Z56',
-		gmapEmbedUrl: 'https://www.google.com/maps?q=Dadu%20Clinic&output=embed',
+		gmapUrl: 'https://maps.app.goo.gl/UPuzYFShgE2hGkMj6',
+		gmapEmbedUrl: 'https://www.google.com/maps?q=Dadu%2C%20Sindh%2C%20Pakistan&output=embed',
 		facebookUrl: 'https://www.facebook.com/share/1QQQJiH4My/',
 	},
 ]; 
