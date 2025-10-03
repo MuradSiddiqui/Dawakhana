@@ -108,8 +108,8 @@ Sent from Mufeed e aam Dawakhana website`;
 								<div className="flex-shrink-0 w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center">
 									<Phone className="h-5 w-5 text-rose-700" />
 								</div>
-								<div>
-									<p className="font-medium text-gray-900 group-hover:text-rose-700">{contact.mainPhone}</p>
+								<div className="min-w-0 flex-1">
+									<p className="font-medium text-gray-900 group-hover:text-rose-700 break-all">{contact.mainPhone}</p>
 									<p className="text-sm text-gray-500">Call us directly</p>
 								</div>
 							</a>
@@ -121,9 +121,9 @@ Sent from Mufeed e aam Dawakhana website`;
 								<div className="flex-shrink-0 w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center">
 									<Mail className="h-5 w-5 text-rose-700" />
 								</div>
-								<div>
-									<p className="font-medium text-gray-900 group-hover:text-rose-700">{contact.email}</p>
-									<p className="text-sm text-gray-500">Send us an email</p>
+								<div className="min-w-0 flex-1 overflow-hidden">
+									<p className="font-medium text-gray-900 group-hover:text-rose-700 break-all text-xs sm:text-sm leading-tight">{contact.email}</p>
+									<p className="text-xs sm:text-sm text-gray-500">Send us an email</p>
 								</div>
 							</a>
 							
@@ -136,7 +136,7 @@ Sent from Mufeed e aam Dawakhana website`;
 								<div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
 									<MessageCircle className="h-5 w-5 text-green-600" />
 								</div>
-								<div>
+								<div className="min-w-0 flex-1">
 									<p className="font-medium text-gray-900 group-hover:text-green-600">WhatsApp</p>
 									<p className="text-sm text-gray-500">Chat with us</p>
 								</div>
@@ -146,8 +146,8 @@ Sent from Mufeed e aam Dawakhana website`;
 								<div className="flex-shrink-0 w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center">
 									<MapPin className="h-5 w-5 text-rose-700" />
 								</div>
-								<div>
-									<p className="font-medium text-gray-900">{contact.headOfficeAddress}</p>
+								<div className="min-w-0 flex-1">
+									<p className="font-medium text-gray-900 break-words">{contact.headOfficeAddress}</p>
 									<p className="text-sm text-gray-500">Head Office</p>
 								</div>
 							</div>

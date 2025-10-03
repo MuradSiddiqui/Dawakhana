@@ -8,7 +8,7 @@ export default function BranchSection({ branch }: Props) {
 	return (
 		<section id={branch.id} className="py-8 sm:py-12 border-t-2 border-gray-200 first:border-t-0">
 			<div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-gray-100 hover-lift group relative overflow-hidden">
-				{/* Background gradient */}
+				
 				<div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-rose-100 to-rose-200 rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
 				<h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{branch.city}</h3>
 				<p className="text-base sm:text-lg text-gray-700 mb-4">{branch.address}</p>
@@ -33,7 +33,7 @@ export default function BranchSection({ branch }: Props) {
 
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 					<div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-100 relative overflow-hidden">
-						{/* Decorative element */}
+						
 						<div className="absolute top-4 right-4 w-16 h-16 bg-rose-100 rounded-full blur-2xl opacity-50"></div>
 						<h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 relative z-10">Opening Hours</h4>
 						<div className="overflow-x-auto relative z-10">
@@ -68,31 +68,31 @@ export default function BranchSection({ branch }: Props) {
 								className="group-hover:scale-105 transition-transform duration-300"
 							></iframe>
 						</div>
-						{/* Enhanced overlay with better location info */}
-						<div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/20">
-							<div className="flex items-center justify-between">
-								<div className="flex items-center gap-3">
-									<div className="w-8 h-8 bg-rose-600 rounded-full flex items-center justify-center">
-										<svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						
+						<div className="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-4 shadow-lg border border-white/20">
+							<div className="flex items-center justify-between gap-2">
+								<div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+									<div className="w-6 h-6 sm:w-8 sm:h-8 bg-rose-600 rounded-full flex items-center justify-center flex-shrink-0">
+										<svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
 											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
 										</svg>
 									</div>
-									<div>
-										<p className="font-semibold text-gray-900">{branch.city} Clinic</p>
-										<p className="text-sm text-gray-600">Precise location shown</p>
+									<div className="min-w-0 flex-1">
+										<p className="font-semibold text-gray-900 text-sm sm:text-base truncate">{branch.city} Clinic</p>
+										<p className="text-xs sm:text-sm text-gray-600 hidden sm:block">Precise location shown</p>
 									</div>
 								</div>
 								<a 
 									href={branch.gmapUrl}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="inline-flex items-center gap-1 px-3 py-1 bg-rose-600 text-white text-xs font-medium rounded-lg hover:bg-rose-700 transition-colors"
+									className="inline-flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1 bg-rose-600 text-white text-xs font-medium rounded-md sm:rounded-lg hover:bg-rose-700 transition-colors flex-shrink-0"
 								>
 									<svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 									</svg>
-									Open
+									<span className="hidden sm:inline">Open</span>
 								</a>
 							</div>
 						</div>

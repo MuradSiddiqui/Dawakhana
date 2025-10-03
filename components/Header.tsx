@@ -23,7 +23,7 @@ export default function Header() {
 			<div className="container-site flex items-center justify-between h-20">
 				<div className="flex items-center gap-4 group">
 					<div className="relative">
-						<img src="/logo.png" alt="Mufeed e aam Dawakhana" className="h-12 w-12 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300" />
+						<img src="/logo.png" alt="Mufeed e aam Dawakhana" className="h-12 w-12 rounded-xl group-hover:shadow-xl transition-all duration-300" />
 						<div className="absolute -inset-1 bg-gradient-to-r from-rose-400 to-rose-600 rounded-xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
 					</div>
 					<span className="text-xl font-bold text-gray-900 group-hover:text-rose-700 transition-colors duration-300">
