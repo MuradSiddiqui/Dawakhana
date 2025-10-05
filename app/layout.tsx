@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { LanguageProvider } from '../lib/LanguageContext';
 
 const siteUrl = 'https://example.com';
 
@@ -50,7 +51,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<meta name="theme-color" content="#e11d48" />
 				<meta name="msapplication-TileColor" content="#e11d48" />
 			</head>
-			<body>{children}</body>
+			<body>
+				<LanguageProvider>
+					{children}
+				</LanguageProvider>
+			</body>
 		</html>
 	);
 } 

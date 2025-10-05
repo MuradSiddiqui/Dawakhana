@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import NavLink from './NavLink';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
 	const [open, setOpen] = useState(false);
@@ -30,12 +31,13 @@ export default function Header() {
 						Mufeed e aam Dawakhana
 					</span>
 				</div>
-				<nav className="hidden md:flex items-center gap-2">
-					<NavLink href="#about">About</NavLink>
-					<NavLink href="#branches">Branches</NavLink>
-					<NavLink href="#timings-maps">Timings & Maps</NavLink>
-					<NavLink href="#contact">Contact</NavLink>
-				</nav>
+                        <nav className="hidden md:flex items-center gap-2">
+                            <NavLink href="#about">About</NavLink>
+                            <NavLink href="#branches">Branches</NavLink>
+                            <NavLink href="#timings-maps">Timings & Maps</NavLink>
+                            <NavLink href="#contact">Contact</NavLink>
+                            <LanguageSwitcher />
+                        </nav>
 				<button
 					className={`md:hidden inline-flex items-center justify-center rounded-xl border-2 px-4 py-2 transition-all duration-300 ${
 						open 
@@ -58,12 +60,20 @@ export default function Header() {
 				open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
 			}`}>
 				<div className="border-t border-gray-200 bg-white/95 backdrop-blur-md shadow-lg">
-					<div className="container-site py-6 flex flex-col gap-3">
-						<NavLink href="#about" onClick={() => setOpen(false)}>About</NavLink>
-						<NavLink href="#branches" onClick={() => setOpen(false)}>Branches</NavLink>
-						<NavLink href="#timings-maps" onClick={() => setOpen(false)}>Timings & Maps</NavLink>
-						<NavLink href="#contact" onClick={() => setOpen(false)}>Contact</NavLink>
-					</div>
+                        <div className="container-site py-6 flex flex-col gap-4">
+                            <NavLink href="#about" onClick={() => setOpen(false)}>About</NavLink>
+                            <NavLink href="#branches" onClick={() => setOpen(false)}>Branches</NavLink>
+                            <NavLink href="#timings-maps" onClick={() => setOpen(false)}>Timings & Maps</NavLink>
+                            <NavLink href="#contact" onClick={() => setOpen(false)}>Contact</NavLink>
+                            
+                            {/* Language Switcher Section */}
+                            <div className="pt-4 border-t border-gray-200">
+                                <div className="flex items-center justify-between mb-3">
+                                    <span className="text-sm font-medium text-gray-600">Language</span>
+                                </div>
+                                <LanguageSwitcher />
+                            </div>
+                        </div>
 				</div>
 			</div>
 		</header>

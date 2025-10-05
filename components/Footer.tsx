@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, MapPin, Phone, Mail, Heart } from 'lucide-react';
+import { MapPin, Phone, Mail, Heart } from 'lucide-react';
 
 export default function Footer() {
 	return (
@@ -66,21 +66,10 @@ export default function Footer() {
 				
 				
 				<div className="border-t border-gray-200 pt-6 sm:pt-8">
-					<div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
-						<p className="text-xs sm:text-sm text-gray-600 font-medium text-center sm:text-left">
+					<div className="text-center">
+						<p className="text-xs sm:text-sm text-gray-600 font-medium">
 							© {new Date().getFullYear()} Mufeed e aam Dawakhana. All rights reserved.
 						</p>
-						<div className="flex items-center gap-4 sm:gap-6">
-							<a 
-								href="https://www.facebook.com/share/1QQQJiH4My/" 
-								target="_blank" 
-								rel="noopener noreferrer" 
-								aria-label="Facebook" 
-								className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-blue-600 text-white hover:bg-blue-700 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
-							>
-								<Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
-							</a>
-						</div>
 					</div>
 				</div>
 			</div>
