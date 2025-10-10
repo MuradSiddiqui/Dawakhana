@@ -12,7 +12,7 @@ export default function Hero() {
 				
 				<div className="mb-12 animate-fade-in">
 					<div className="relative">
-						<img src="/logo.png" alt="Mufeed e aam Dawakhana" className="h-32 w-32 mx-auto rounded-2xl " />
+						<img src="/logo.png" alt="Mufeed e aam Dawakhana - Leading Healthcare Clinic in Sindh, Pakistan" className="h-32 w-32 mx-auto rounded-2xl " />
 					</div>
 				</div>
 				

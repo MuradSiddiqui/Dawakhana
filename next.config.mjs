@@ -5,6 +5,9 @@ const nextConfig = {
 		optimizePackageImports: ['lucide-react'],
 	},
 	output: 'export',
+	images: {
+		unoptimized: true,
+	},
 };
 
 export default nextConfig; 

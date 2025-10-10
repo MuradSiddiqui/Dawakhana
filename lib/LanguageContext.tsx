@@ -26,6 +26,22 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     // Save language to localStorage
     localStorage.setItem('language', language);
+    
+    // Apply appropriate font and direction to body
+    const body = document.body;
+    const html = document.documentElement;
+    
+    if (language === 'ur' || language === 'sd') {
+      body.classList.add('font-urdu');
+      body.dir = 'rtl';
+      html.dir = 'rtl';
+      html.lang = language === 'ur' ? 'ur' : 'sd';
+    } else {
+      body.classList.remove('font-urdu');
+      body.dir = 'ltr';
+      html.dir = 'ltr';
+      html.lang = 'en';
+    }
   }, [language]);
 
   const isRTL = languages[language].dir === 'rtl';

@@ -9,12 +9,16 @@ export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleLanguageChange = (newLanguage: Language) => {
+  const handleLanguageChange = (newLanguage: Language, e: React.MouseEvent | React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setLanguage(newLanguage);
     setIsOpen(false);
   };
 
-  const toggleDropdown = () => {
+  const toggleDropdown = (e: React.MouseEvent | React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setIsOpen(!isOpen);
   };
 
@@ -36,8 +40,11 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-300 hover:border-rose-400 hover:bg-rose-50 transition-all duration-300 text-sm font-medium text-gray-700 hover:text-rose-700 w-full"
+        onTouchEnd={toggleDropdown}
+        className="flex items-center gap-2 px-3 py-3 rounded-lg border border-gray-300 hover:border-rose-400 hover:bg-rose-50 transition-all duration-300 text-sm font-medium text-gray-700 hover:text-rose-700 w-full touch-manipulation"
         aria-label="Language switcher"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
       >
         <Globe className="h-4 w-4" />
         <span className="flex-1 text-left">{languages[language].name}</span>
@@ -46,32 +53,33 @@ export default function LanguageSwitcher() {
         </svg>
       </button>
       
-      <div className={`absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-300 z-50 ${
-        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      }`}>
-        <div className="py-2">
-          {Object.entries(languages).map(([code, lang]) => (
-            <button
-              key={code}
-              onClick={() => handleLanguageChange(code as Language)}
-              className={`w-full px-4 py-2 text-left text-sm hover:bg-rose-50 transition-colors ${
-                language === code 
-                  ? 'text-rose-700 font-medium bg-rose-50' 
-                  : 'text-gray-700 hover:text-rose-700'
-              }`}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-lg">{lang.name}</span>
-                {language === code && (
-                  <svg className="h-4 w-4 text-rose-700" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                )}
-              </div>
-            </button>
-          ))}
+      {isOpen && (
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 z-[9999]">
+          <div className="py-2">
+            {Object.entries(languages).map(([code, lang]) => (
+              <button
+                key={code}
+                onClick={(e) => handleLanguageChange(code as Language, e)}
+                onTouchEnd={(e) => handleLanguageChange(code as Language, e)}
+                className={`w-full px-4 py-3 text-left text-sm hover:bg-rose-50 transition-colors touch-manipulation ${
+                  language === code 
+                    ? 'text-rose-700 font-medium bg-rose-50' 
+                    : 'text-gray-700 hover:text-rose-700'
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">{lang.name}</span>
+                  {language === code && (
+                    <svg className="h-4 w-4 text-rose-700" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

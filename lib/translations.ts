@@ -27,7 +27,7 @@ export const translations = {
         name: 'Hakeem Muhammad Mohsin Siddiqui',
         title: 'Founder and History',
         description: 'Hakeem Muhammad Mohsin Siddiqui (Fazil-ut-Tibb-wal-Jarahat; M.A. History, University of Sindh) has operated the clinics since 1993. He oversees clinical services, training, and public education initiatives. All clinics are registered with the Sindh Healthcare Commission.',
-        history: 'Hakeem Makhdoom Muhammad Murad Siddiqui (born 1925, Sehwan Sharif) founded Dar al-Shifa Mufeed-e-Aam Dawakhana clinics. Fluent in English, Farsi, Urdu, Sindhi, Balochi, and Punjabi, he dedicated his life to learning and service. He established a public library in Sehwan Sharif featuring works on Unani Tibb and education, and was a respected general physician known for treating a wide spectrum of ailments.'
+        history: 'Hakeem Makhdoom Muhammad Murad Siddiqui (born 1925, Sehwan Sharif) founded Dar al-Shifa Mufeed-e-Aam Dawakhana clinics. Fluent in English, Arabic, Farsi, Urdu, Sindhi, Balochi, and Punjabi, he dedicated his life to learning and service. He established a public library in Sehwan Sharif featuring works on Unani Tibb and education, and was a respected general physician known for treating a wide spectrum of ailments. He is widely recognized across Pakistan, especially in Sindh for his distinguished reputation and contributions to the field of Tibb.'
       }
     },
     
