@@ -121,7 +121,7 @@ export default function StructuredData() {
 				"publisher": {
 					"@id": "https://dawakhanamufeed.pk/#organization"
 				},
-				"inLanguage": ["en-PK", "ur-PK", "sd-PK"]
+				"inLanguage": ["en-PK", "ur-PK"]
 			}
 		]
 	};

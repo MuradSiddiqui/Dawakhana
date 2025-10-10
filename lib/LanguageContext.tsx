@@ -31,11 +31,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const body = document.body;
     const html = document.documentElement;
     
-    if (language === 'ur' || language === 'sd') {
+    if (language === 'ur') {
       body.classList.add('font-urdu');
       body.dir = 'rtl';
       html.dir = 'rtl';
-      html.lang = language === 'ur' ? 'ur' : 'sd';
+      html.lang = 'ur';
     } else {
       body.classList.remove('font-urdu');
       body.dir = 'ltr';

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 		default: 'Mufeed e aam Dawakhana - Best Dawakhana in Pakistan | Karachi, Hyderabad, Mirpurkhas, Dadu',
 		template: '%s | Mufeed e aam Dawakhana',
 	},
-	description: 'Mufeed e aam Dawakhana - Leading healthcare clinic in Sindh, Pakistan. Providing compassionate medical care, treatment services, and consultation in Karachi, Hyderabad, Mirpurkhas, and Dadu. افادی عام دواخانہ - بہترین طبی خدمات',
+	description: 'Mufeed e aam Dawakhana - Leading healthcare clinic in Sindh, Pakistan. Providing compassionate medical care, treatment services, and consultation in Karachi, Hyderabad, Mirpurkhas, and Dadu. مفید عام دواخانہ - بہترین طبی خدمات',
 	keywords: [
 		'Dawakhana',
 		'Mufeed e aam Dawakhana',
@@ -48,7 +48,6 @@ export const metadata: Metadata = {
 		'Sindh medical clinic',
 		'Pakistan healthcare',
 		'Urdu dawakhana',
-		'Sindhi dawakhana',
 		'Traditional medicine Pakistan',
 	],
 	authors: [{ name: 'Mufeed e aam Dawakhana' }],
@@ -70,7 +69,6 @@ export const metadata: Metadata = {
 		languages: {
 			'en-PK': '/',
 			'ur-PK': '/',
-			'sd-PK': '/',
 		},
 	},
 	openGraph: {
@@ -126,7 +124,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<meta name="geo.region" content="PK-SD" />
 				<meta name="geo.placename" content="Sindh, Pakistan" />
 			</head>
-			<body className={inter.className}>
+			<body className={inter.className} suppressHydrationWarning>
 				<LanguageProvider>
 					{children}
 				</LanguageProvider>

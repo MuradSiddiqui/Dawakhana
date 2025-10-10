@@ -29,7 +29,7 @@ p {
 }
 
 /* Urdu/Arabic text styling */
-[lang="ur"], [lang="sd"], .font-urdu {
+[lang="ur"], .font-urdu {
 	font-family: var(--font-urdu), serif;
 	line-height: 1.8;
 	letter-spacing: 0.01em;
