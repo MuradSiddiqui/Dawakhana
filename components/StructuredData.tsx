@@ -4,13 +4,13 @@ export default function StructuredData() {
 		"@graph": [
 			{
 				"@type": "Organization",
-				"@id": "https://dawakhanamufeed.pk/#organization",
+				"@id": "https://dawakhanaa.pk/#organization",
 				"name": "Mufeed e aam Dawakhana",
 				"alternateName": "مفید عام دواخانہ",
-				"url": "https://dawakhanamufeed.pk",
+				"url": "https://dawakhanaa.pk",
 				"logo": {
 					"@type": "ImageObject",
-					"url": "https://dawakhanamufeed.pk/logo.png"
+					"url": "https://dawakhanaa.pk/logo.png"
 				},
 				"description": "Leading healthcare clinic in Sindh, Pakistan providing compassionate medical care",
 				"address": {
@@ -24,7 +24,7 @@ export default function StructuredData() {
 			},
 			{
 				"@type": "MedicalClinic",
-				"@id": "https://dawakhanamufeed.pk/#karachi",
+				"@id": "https://dawakhanaa.pk/#karachi",
 				"name": "Mufeed e aam Dawakhana - Karachi",
 				"address": {
 					"@type": "PostalAddress",
@@ -34,7 +34,7 @@ export default function StructuredData() {
 					"addressCountry": "PK"
 				},
 				"telephone": "+92-21-34663679",
-				"url": "https://dawakhanamufeed.pk/#karachi",
+				"url": "https://dawakhanaa.pk/#karachi",
 				"geo": {
 					"@type": "GeoCoordinates",
 					"latitude": "24.914414",
@@ -57,7 +57,7 @@ export default function StructuredData() {
 			},
 			{
 				"@type": "MedicalClinic",
-				"@id": "https://dawakhanamufeed.pk/#hyderabad",
+				"@id": "https://dawakhanaa.pk/#hyderabad",
 				"name": "Mufeed e aam Dawakhana - Hyderabad",
 				"address": {
 					"@type": "PostalAddress",
@@ -67,7 +67,7 @@ export default function StructuredData() {
 					"addressCountry": "PK"
 				},
 				"telephone": "+92-22-785888",
-				"url": "https://dawakhanamufeed.pk/#hyderabad",
+				"url": "https://dawakhanaa.pk/#hyderabad",
 				"geo": {
 					"@type": "GeoCoordinates",
 					"latitude": "25.3851382",
@@ -76,7 +76,7 @@ export default function StructuredData() {
 			},
 			{
 				"@type": "MedicalClinic",
-				"@id": "https://dawakhanamufeed.pk/#mirpurkhas",
+				"@id": "https://dawakhanaa.pk/#mirpurkhas",
 				"name": "Mufeed e aam Dawakhana - Mirpurkhas",
 				"address": {
 					"@type": "PostalAddress",
@@ -86,7 +86,7 @@ export default function StructuredData() {
 					"addressCountry": "PK"
 				},
 				"telephone": "+92-333-2785888",
-				"url": "https://dawakhanamufeed.pk/#mirpurkhas",
+				"url": "https://dawakhanaa.pk/#mirpurkhas",
 				"geo": {
 					"@type": "GeoCoordinates",
 					"latitude": "25.5278335",
@@ -95,7 +95,7 @@ export default function StructuredData() {
 			},
 			{
 				"@type": "MedicalClinic",
-				"@id": "https://dawakhanamufeed.pk/#dadu",
+				"@id": "https://dawakhanaa.pk/#dadu",
 				"name": "Mufeed e aam Dawakhana - Dadu",
 				"address": {
 					"@type": "PostalAddress",
@@ -105,7 +105,7 @@ export default function StructuredData() {
 					"addressCountry": "PK"
 				},
 				"telephone": "+92-333-2785888",
-				"url": "https://dawakhanamufeed.pk/#dadu",
+				"url": "https://dawakhanaa.pk/#dadu",
 				"geo": {
 					"@type": "GeoCoordinates",
 					"latitude": "26.7388333",
@@ -114,12 +114,12 @@ export default function StructuredData() {
 			},
 			{
 				"@type": "WebSite",
-				"@id": "https://dawakhanamufeed.pk/#website",
-				"url": "https://dawakhanamufeed.pk",
+				"@id": "https://dawakhanaa.pk/#website",
+				"url": "https://dawakhanaa.pk",
 				"name": "Mufeed e aam Dawakhana",
 				"description": "Leading healthcare clinic in Sindh, Pakistan",
 				"publisher": {
-					"@id": "https://dawakhanamufeed.pk/#organization"
+					"@id": "https://dawakhanaa.pk/#organization"
 				},
 				"inLanguage": ["en-PK", "ur-PK"]
 			}

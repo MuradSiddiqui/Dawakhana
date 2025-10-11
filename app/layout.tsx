@@ -3,6 +3,7 @@ import './globals.css';
 import { LanguageProvider } from '../lib/LanguageContext';
 import { Inter, Noto_Nastaliq_Urdu } from 'next/font/google';
 import StructuredData from '../components/StructuredData';
+import { Analytics } from '@vercel/analytics/next';
 
 // Professional sans-serif font for English
 const inter = Inter({
@@ -19,7 +20,7 @@ const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
 	variable: '--font-urdu',
 });
 
-const siteUrl = 'https://dawakhanamufeed.pk';
+const siteUrl = 'https://dawakhanaa.pk';
 
 export const metadata: Metadata = {
 	title: {
@@ -128,6 +129,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<LanguageProvider>
 					{children}
 				</LanguageProvider>
+				<Analytics />
 			</body>
 		</html>
 	);

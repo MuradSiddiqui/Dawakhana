@@ -21,7 +21,7 @@ export default function robots(): MetadataRoute.Robots {
 				crawlDelay: 0,
 			},
 		],
-		sitemap: 'https://dawakhanamufeed.pk/sitemap.xml',
-		host: 'https://dawakhanamufeed.pk',
+		sitemap: 'https://dawakhanaa.pk/sitemap.xml',
+		host: 'https://dawakhanaa.pk',
 	};
 } 
