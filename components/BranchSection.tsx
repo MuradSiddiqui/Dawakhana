@@ -1,10 +1,23 @@
+'use client';
 import React from 'react';
 import { Phone, MapPin, Facebook, Mail } from 'lucide-react';
 import type { Branch } from '../data/branches';
+import { useLanguage } from '../lib/LanguageContext';
 
 type Props = { branch: Branch };
 
+const dayKeyMap: Record<string, string> = {
+	'Mon': 'monday',
+	'Tue': 'tuesday',
+	'Wed': 'wednesday',
+	'Thu': 'thursday',
+	'Fri': 'friday',
+	'Sat': 'saturday',
+	'Sun': 'sunday'
+};
+
 export default function BranchSection({ branch }: Props) {
+	const { t } = useLanguage();
 	return (
 		<section id={branch.id} className="py-8 sm:py-12 border-t-2 border-gray-200 first:border-t-0">
 			<div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-gray-100 hover-lift group relative overflow-hidden">
@@ -14,19 +27,19 @@ export default function BranchSection({ branch }: Props) {
 				<p className="text-base sm:text-lg text-gray-700 mb-4">{branch.address}</p>
 				<div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6">
 					<a className="inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-rose-200 px-2 sm:px-4 py-2 text-rose-800 hover:bg-rose-50 transition-colors font-medium text-sm sm:text-base" href={`tel:${branch.phone.replace(/\s/g,'')}`} aria-label={`Call ${branch.city}`}>
-						<Phone className="h-3 w-3 sm:h-4 sm:w-4" /> <span className="hidden sm:inline">Call </span>{branch.phone}
+						<Phone className="h-3 w-3 sm:h-4 sm:w-4 phone-icon" /> <span className="hidden sm:inline">Call </span>{branch.phone}
 					</a>
 					<a className="inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-2 sm:px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm sm:text-base" href={branch.gmapUrl} target="_blank" rel="noopener noreferrer" aria-label={`Directions to ${branch.city}`}>
-						<MapPin className="h-3 w-3 sm:h-4 sm:w-4" /> <span className="hidden sm:inline">Directions</span>
+						<MapPin className="h-3 w-3 sm:h-4 sm:w-4 location-icon" /> <span className="hidden sm:inline">Directions</span>
 					</a>
 					{branch.email && (
 						<a className="inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-2 sm:px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm sm:text-base" href={`mailto:${branch.email}`}>
-							<Mail className="h-3 w-3 sm:h-4 sm:w-4" /> <span className="hidden sm:inline">{branch.email}</span>
+							<Mail className="h-3 w-3 sm:h-4 sm:w-4 mail-icon" /> <span className="hidden sm:inline">{branch.email}</span>
 						</a>
 					)}
 					{branch.facebookUrl && (
 						<a className="inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-blue-200 px-2 sm:px-4 py-2 text-blue-700 hover:bg-blue-50 transition-colors font-medium text-sm sm:text-base" href={branch.facebookUrl} target="_blank" rel="noopener noreferrer">
-							<Facebook className="h-3 w-3 sm:h-4 sm:w-4" /> <span className="hidden sm:inline">Facebook</span>
+							<Facebook className="h-3 w-3 sm:h-4 sm:w-4 facebook-icon" /> <span className="hidden sm:inline">Facebook</span>
 						</a>
 					)}
 				</div>
@@ -45,12 +58,38 @@ export default function BranchSection({ branch }: Props) {
 									</tr>
 								</thead>
 								<tbody>
-									{branch.hours.map((h, index) => (
-										<tr key={h.day} className={`border-b border-gray-100 hover:bg-rose-50/50 transition-colors duration-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
-											<th scope="row" className="py-4 pr-4 font-semibold text-gray-800 text-sm">{h.day}</th>
-											<td className="py-4 text-gray-700 text-sm break-words font-medium">{h.open === 'Closed' ? <span className="text-red-600 font-semibold">Closed</span> : (h.close ? `${h.open} – ${h.close}` : h.open)}</td>
-										</tr>
-									))}
+									{branch.hours.map((h, index) => {
+										const dayKey = dayKeyMap[h.day] || h.day.toLowerCase();
+										const translatedDay = t(`common.${dayKey}`);
+										const translatedClosed = t('common.closed');
+										
+										const formatTiming = (openTime: string, closeTime: string) => {
+											if (openTime === 'Closed' || closeTime === 'Closed') return translatedClosed;
+											
+											if (openTime.includes('–') || openTime.includes('-')) {
+												return openTime;
+											}
+											
+											if (closeTime && closeTime !== '') {
+												return `${openTime} – ${closeTime}`;
+											}
+											
+											return openTime;
+										};
+										
+										return (
+											<tr key={h.day} className={`border-b border-gray-100 hover:bg-rose-50/50 transition-colors duration-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
+												<th scope="row" className="py-4 pr-4 font-semibold text-gray-800 text-sm">{translatedDay}</th>
+												<td className="py-4 text-gray-700 text-sm break-words font-medium">
+													{h.open === 'Closed' ? (
+														<span className="text-red-600 font-semibold">{translatedClosed}</span>
+													) : (
+														<span>{formatTiming(h.open, h.close)}</span>
+													)}
+												</td>
+											</tr>
+										);
+									})}
 								</tbody>
 							</table>
 						</div>

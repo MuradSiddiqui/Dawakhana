@@ -11,31 +11,31 @@ export default function Hero() {
 			<div className="text-center max-w-5xl mx-auto px-4 relative z-10">
 				
 				<div className="mb-12 animate-fade-in">
-					<div className="relative">
-						<img src="/logo.png" alt="Mufeed e aam Dawakhana - Leading Healthcare Clinic in Sindh, Pakistan" className="h-32 w-32 mx-auto rounded-2xl " />
+					<div className="relative flex justify-center">
+						<img src="/logo.png" alt="Mufeed e aam Dawakhana - Leading Healthcare Clinic in Sindh, Pakistan" className="h-32 w-32 rounded-2xl" />
 					</div>
 				</div>
 				
 				
 				<div className="mb-12 animate-slide-up">
-					<h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight whitespace-nowrap drop-shadow-sm" dir="rtl">
+					<h1 className="hero-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight drop-shadow-sm" dir="rtl">
 						بسم الله الرحمن الرحيم
 					</h1>
-					<p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-8 leading-relaxed drop-shadow-sm" dir="rtl">
+					<p className="hero-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-8 leading-relaxed drop-shadow-sm" dir="rtl">
 						وَإِذا مَرِضْتُ فَهُوَ يَشْفِيْن..
 					</p>
 				</div>
 				
 				
 				<div className="mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-					<p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 mb-6 leading-relaxed font-medium" dir="rtl">
+					<p className="hero-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 mb-6 leading-relaxed font-medium" dir="rtl">
 						اور جب میں بیمار ہوتا ہوں تو وہی (الله) مجھے شفا دیتا ہے..
 					</p>
 				</div>
 				
 				
 				<div className="mb-16 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-					<p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 font-medium italic">
+					<p className="hero-heading text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 font-medium italic">
 						And when I am ill, it is He who cures me.
 					</p>
 				</div>

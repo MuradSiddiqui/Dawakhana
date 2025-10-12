@@ -77,7 +77,7 @@ Sent from Mufeed e aam Dawakhana website`;
 	};
 
 	return (
-		<div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-sm border border-gray-100">
+		<div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-sm border border-gray-100 overflow-hidden">
 			<div className="text-center mb-8">
 				<h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-2">Contact Us</h2>
 				<p className="text-gray-600">Get in touch with our healthcare professionals</p>
@@ -85,7 +85,7 @@ Sent from Mufeed e aam Dawakhana website`;
 			
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 			
-				<div className="space-y-6">
+				<div className="space-y-6 min-w-0">
 					<div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
 						<h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
 							<User className="h-5 w-5 text-rose-700" />
@@ -95,34 +95,34 @@ Sent from Mufeed e aam Dawakhana website`;
 						<p className="text-gray-600">Hakeem & Clinic Director</p>
 					</div>
 
-					<div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+					<div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 min-w-0">
 						<h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
 							<Building className="h-5 w-5 text-rose-700" />
 							Contact Details
 						</h3>
-						<div className="space-y-3">
+						<div className="space-y-3 min-w-0">
 							<a 
 								href={`tel:${contact.mainPhone.replace(/\s/g,'')}`}
-								className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+								className="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
 							>
-								<div className="flex-shrink-0 w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center">
-									<Phone className="h-5 w-5 text-rose-700" />
+								<div className="flex-shrink-0 w-6 h-6 bg-rose-100 rounded-full flex items-center justify-center">
+									<Phone className="h-3 w-3 text-rose-700" />
 								</div>
-								<div className="min-w-0 flex-1">
-									<p className="font-medium text-gray-900 group-hover:text-rose-700 break-all">{contact.mainPhone}</p>
-									<p className="text-sm text-gray-500">Call us directly</p>
+								<div className="flex-1">
+									<p className="font-medium text-gray-900 group-hover:text-rose-700 text-xs sm:text-sm">{contact.mainPhone}</p>
+									<p className="text-xs sm:text-sm text-gray-500">Call us directly</p>
 								</div>
 							</a>
 							
 							<a 
 								href={`mailto:${contact.email}`}
-								className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+								className="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
 							>
-								<div className="flex-shrink-0 w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center">
-									<Mail className="h-5 w-5 text-rose-700" />
+								<div className="flex-shrink-0 w-6 h-6 bg-rose-100 rounded-full flex items-center justify-center">
+									<Mail className="h-3 w-3 text-rose-700" />
 								</div>
-								<div className="min-w-0 flex-1 overflow-hidden">
-									<p className="font-medium text-gray-900 group-hover:text-rose-700 break-all text-xs sm:text-sm leading-tight">{contact.email}</p>
+								<div className="flex-1">
+									<p className="font-medium text-gray-900 group-hover:text-rose-700 text-xs sm:text-sm">{contact.email}</p>
 									<p className="text-xs sm:text-sm text-gray-500">Send us an email</p>
 								</div>
 							</a>
@@ -131,10 +131,10 @@ Sent from Mufeed e aam Dawakhana website`;
 								href={waLink}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+								className="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
 							>
-								<div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-									<MessageCircle className="h-5 w-5 text-green-600" />
+								<div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+									<MessageCircle className="h-4 w-4 text-green-600" />
 								</div>
 								<div className="min-w-0 flex-1">
 									<p className="font-medium text-gray-900 group-hover:text-green-600">WhatsApp</p>
@@ -142,9 +142,9 @@ Sent from Mufeed e aam Dawakhana website`;
 								</div>
 							</a>
 							
-							<div className="flex items-center gap-3 p-3 rounded-lg">
-								<div className="flex-shrink-0 w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center">
-									<MapPin className="h-5 w-5 text-rose-700" />
+							<div className="flex items-center gap-2 p-3 rounded-lg">
+								<div className="flex-shrink-0 w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center">
+									<MapPin className="h-4 w-4 text-rose-700" />
 								</div>
 								<div className="min-w-0 flex-1">
 									<p className="font-medium text-gray-900 break-words">{contact.headOfficeAddress}</p>
@@ -154,30 +154,6 @@ Sent from Mufeed e aam Dawakhana website`;
 						</div>
 					</div>
 
-					{/* <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-						<h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-							<Clock className="h-5 w-5 text-rose-700" />
-							Quick Contact
-						</h3>
-						<p className="text-gray-600 mb-3">Prefer email or WhatsApp? Use the buttons below:</p>
-						<div className="flex flex-wrap items-center gap-3">
-							<a 
-								href={`mailto:${contact.email}`}
-								className="inline-flex items-center gap-2 px-4 py-2 bg-rose-700 text-white rounded-lg hover:bg-rose-800 transition-colors"
-							>
-								<Mail className="h-4 w-4" />
-								Email {contact.name}
-							</a>
-							<a 
-								href={waLink}
-								target="_blank" rel="noopener noreferrer"
-								className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-							>
-								<MessageCircle className="h-4 w-4" />
-								WhatsApp
-							</a>
-						</div>
-					</div> */}
 				</div>
 
 

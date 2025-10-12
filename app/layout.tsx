@@ -5,14 +5,12 @@ import { Inter, Noto_Nastaliq_Urdu } from 'next/font/google';
 import StructuredData from '../components/StructuredData';
 import { Analytics } from '@vercel/analytics/next';
 
-// Professional sans-serif font for English
 const inter = Inter({
 	subsets: ['latin'],
 	display: 'swap',
 	variable: '--font-inter',
 });
 
-// Beautiful Urdu/Sindhi font
 const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
 	subsets: ['arabic'],
 	weight: ['400', '500', '600', '700'],

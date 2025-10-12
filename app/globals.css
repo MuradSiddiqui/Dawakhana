@@ -35,6 +35,99 @@ p {
 	letter-spacing: 0.01em;
 }
 
+/* RTL Support */
+[dir="rtl"] {
+	direction: rtl;
+	text-align: right;
+}
+
+/* RTL Flex and Grid adjustments */
+[dir="rtl"] .flex {
+	flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-row {
+	flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-col {
+	flex-direction: column;
+}
+
+/* RTL Text alignment */
+[dir="rtl"] .text-left {
+	text-align: right;
+}
+
+[dir="rtl"] .text-right {
+	text-align: left;
+}
+
+/* Ensure text-center works properly with RTL */
+[dir="rtl"] .text-center {
+	text-align: center;
+}
+
+/* Hero section centering */
+.hero-heading {
+	text-align: center !important;
+	display: block;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+[dir="rtl"] .hero-heading {
+	text-align: center !important;
+}
+
+[dir="ltr"] .hero-heading {
+	text-align: center !important;
+}
+
+/* RTL Spacing adjustments */
+[dir="rtl"] .ml-auto {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+/* RTL Border radius */
+[dir="rtl"] .rounded-l {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-top-right-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+}
+
+[dir="rtl"] .rounded-r {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 0.25rem;
+	border-bottom-left-radius: 0.25rem;
+}
+
+/* RTL Icon fixes */
+[dir="rtl"] .phone-icon {
+	transform: scaleX(-1);
+}
+
+[dir="rtl"] .location-icon {
+	transform: scaleX(-1);
+}
+
+[dir="rtl"] .mail-icon {
+	transform: scaleX(-1);
+}
+
+[dir="rtl"] .facebook-icon {
+	transform: scaleX(-1);
+}
+
 .container-site {
 	@apply max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto;
 }

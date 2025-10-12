@@ -27,7 +27,7 @@ export default function Header() {
 						<img src="/logo.png" alt="Mufeed e aam Dawakhana" className="h-11 w-11 rounded-xl group-hover:shadow-xl transition-all duration-300" />
 						<div className="absolute -inset-1 bg-gradient-to-r from-rose-400 to-rose-600 rounded-xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
 					</div>
-					<span className="hidden sm:block text-lg font-semibold text-gray-800 group-hover:text-rose-700 transition-colors duration-300">
+					<span className="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-rose-700 transition-colors duration-300">
 						Mufeed e aam Dawakhana
 					</span>
 				</a>
@@ -72,7 +72,7 @@ export default function Header() {
                                     <span className="text-sm font-medium text-gray-600">Language</span>
                                 </div>
                                 <div className="relative z-50">
-                                    <LanguageSwitcher />
+                                    <LanguageSwitcher onLanguageChange={() => setOpen(false)} />
                                 </div>
                             </div>
                         </div>

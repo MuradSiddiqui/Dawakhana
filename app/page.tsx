@@ -11,22 +11,24 @@ export default function Page() {
 	return (
 		<div>
 			<Header />
-			<main className="space-y-24">
-				<section id="home" className="container-site pt-24">
+			<main>
+				<section id="home">
 					<Hero />
 				</section>
-				<section id="about" className="container-site">
-					<About />
-				</section>
-				<section id="branches" className="container-site">
-					<BranchesGrid />
-				</section>
-				<section id="timings-maps" className="container-site">
-					<TimingsAndMaps />
-				</section>
-				<section id="contact" className="container-site">
-					<Contact />
-				</section>
+				<div className="space-y-24 py-24">
+					<section id="about" className="container-site">
+						<About />
+					</section>
+					<section id="branches" className="container-site">
+						<BranchesGrid />
+					</section>
+					<section id="timings-maps" className="container-site">
+						<TimingsAndMaps />
+					</section>
+					<section id="contact" className="container-site">
+						<Contact />
+					</section>
+				</div>
 			</main>
 			<Footer />
 			<ScrollToTop />

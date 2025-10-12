@@ -12,7 +12,6 @@ export default function ScrollToTop() {
 			setIsVisible(scrollTop > 200);
 		};
 
-		// Initial check
 		handleScroll();
 
 		window.addEventListener('scroll', handleScroll, { passive: true });

@@ -24,10 +24,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    // Save language to localStorage
     localStorage.setItem('language', language);
     
-    // Apply appropriate font and direction to body
     const body = document.body;
     const html = document.documentElement;
     

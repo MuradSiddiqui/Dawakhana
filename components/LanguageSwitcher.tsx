@@ -4,7 +4,11 @@ import { useLanguage } from '../lib/LanguageContext';
 import { languages, Language } from '../lib/languages';
 import { Globe } from 'lucide-react';
 
-export default function LanguageSwitcher() {
+type Props = {
+  onLanguageChange?: () => void;
+};
+
+export default function LanguageSwitcher({ onLanguageChange }: Props) {
   const { language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -14,6 +18,10 @@ export default function LanguageSwitcher() {
     e.stopPropagation();
     setLanguage(newLanguage);
     setIsOpen(false);
+    // Close the mobile menu if callback is provided
+    if (onLanguageChange) {
+      onLanguageChange();
+    }
   };
 
   const toggleDropdown = (e: React.MouseEvent | React.TouchEvent) => {

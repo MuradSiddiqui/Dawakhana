@@ -1,6 +1,5 @@
 export const translations = {
   en: {
-    // Navigation
     nav: {
       about: 'About',
       branches: 'Branches', 
@@ -8,7 +7,6 @@ export const translations = {
       contact: 'Contact'
     },
     
-    // Hero Section
     hero: {
       title: 'بسم الله الرحمن الرحيم',
       subtitle: 'وَإِذا مَرِضْتُ فَهُوَ يَشْفِيْن..',
@@ -18,7 +16,6 @@ export const translations = {
       contactUs: 'Contact Us'
     },
     
-    // About Section
     about: {
       title: 'About Us',
       subtitle: 'Compassionate Healthcare Across Sindh',
@@ -31,7 +28,6 @@ export const translations = {
       }
     },
     
-    // Branches
     branches: {
       title: 'Our Branches',
       subtitle: 'Healthcare Services Across Sindh',
@@ -42,7 +38,6 @@ export const translations = {
       directions: 'Get Directions'
     },
     
-    // Timings & Maps
     timings: {
       title: 'Timings & Maps',
       subtitle: 'Find Us Near You',
@@ -51,7 +46,6 @@ export const translations = {
       getDirections: 'Get Directions'
     },
     
-    // Contact
     contact: {
       title: 'Contact Us',
       subtitle: 'Get in Touch',
@@ -73,7 +67,6 @@ export const translations = {
       headOffice: 'Head Office'
     },
     
-    // Footer
     footer: {
       description: 'Compassionate, community healthcare across Sindh. Providing accessible medical care with dignity and respect.',
       madeWithLove: 'Made with love for our community',
@@ -84,7 +77,6 @@ export const translations = {
       allRightsReserved: 'All rights reserved.'
     },
     
-    // Common
     common: {
       closed: 'Closed',
       open: 'Open',
@@ -99,15 +91,13 @@ export const translations = {
   },
   
   ur: {
-    // Navigation
     nav: {
-      about: 'ہمارے بارے میں',
+      about: 'ہمارے متعلق',
       branches: 'شاخیں',
       timings: 'اوقات اور نقشے',
       contact: 'رابطہ'
     },
     
-    // Hero Section
     hero: {
       title: 'بسم الله الرحمن الرحيم',
       subtitle: 'وَإِذا مَرِضْتُ فَهُوَ يَشْفِيْن..',
@@ -117,9 +107,8 @@ export const translations = {
       contactUs: 'رابطہ کریں'
     },
     
-    // About Section
     about: {
-      title: 'ہمارے بارے میں',
+      title: ' ہمارے متعلق ',
       subtitle: 'سندھ بھر میں ہمدردانہ صحت کی دیکھ بھال',
       description: 'مفید عام دواخانہ سندھ بھر میں مریضوں کی خدمت کرنے والا ایک کمیونٹی فوکسڈ یونانی کلینک نیٹ ورک ہے۔ حکیم محمد محسن صدیقی کی قیادت میں، ہم ہولسٹک، شواہد پر مبنی پریکٹس پر خاص زور دیتے ہوئے ہمدردانہ پرائمری کیئر فراہم کرتے ہیں۔ ہماری شاخیں مریضوں کو آسان دوروں کی منصوبہ بندی میں مدد کے لیے واضح طور پر شائع شدہ اوقات پر کام کرتی ہیں۔',
       founder: {
@@ -130,7 +119,6 @@ export const translations = {
       }
     },
     
-    // Branches
     branches: {
       title: 'ہماری شاخیں',
       subtitle: 'سندھ بھر میں صحت کی خدمات',
@@ -141,7 +129,6 @@ export const translations = {
       directions: 'ہدایات حاصل کریں'
     },
     
-    // Timings & Maps
     timings: {
       title: 'اوقات اور نقشے',
       subtitle: 'اپنے قریب ہمیں تلاش کریں',
@@ -150,7 +137,6 @@ export const translations = {
       getDirections: 'ہدایات حاصل کریں'
     },
     
-    // Contact
     contact: {
       title: 'رابطہ کریں',
       subtitle: 'ہم سے رابطہ کریں',
@@ -172,7 +158,6 @@ export const translations = {
       headOffice: 'ہیڈ آفس'
     },
     
-    // Footer
     footer: {
       description: 'سندھ بھر میں ہمدردانہ، کمیونٹی صحت کی دیکھ بھال۔ عزت اور احترام کے ساتھ قابل رسائی طبی دیکھ بھال فراہم کرنا۔',
       madeWithLove: 'ہماری کمیونٹی کے لیے محبت کے ساتھ بنایا گیا',
@@ -183,7 +168,6 @@ export const translations = {
       allRightsReserved: 'تمام حقوق محفوظ ہیں۔'
     },
     
-    // Common
     common: {
       closed: 'بند',
       open: 'کھلا',

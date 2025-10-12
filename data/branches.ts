@@ -13,7 +13,6 @@ export type Branch = {
 	facebookUrl?: string;
 };
 
-// Helper to mark closed days
 const closed: Hours = { day: '', open: 'Closed', close: 'Closed' } as Hours;
 
 export const branches: Branch[] = [

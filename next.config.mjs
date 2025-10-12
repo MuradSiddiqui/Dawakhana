@@ -8,44 +8,35 @@ const nextConfig = {
 	images: {
 		unoptimized: true,
 	},
-	// Security headers
 	async headers() {
 		return [
 			{
-				// Apply these headers to all routes
 				source: '/:path*',
 				headers: [
-					// Prevent clickjacking attacks
 					{
 						key: 'X-Frame-Options',
 						value: 'DENY',
 					},
-					// Prevent MIME type sniffing
 					{
 						key: 'X-Content-Type-Options',
 						value: 'nosniff',
 					},
-					// Enable browser XSS protection
 					{
 						key: 'X-XSS-Protection',
 						value: '1; mode=block',
 					},
-					// Referrer policy
 					{
 						key: 'Referrer-Policy',
 						value: 'strict-origin-when-cross-origin',
 					},
-					// Permissions policy
 					{
 						key: 'Permissions-Policy',
 						value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
 					},
-					// Strict Transport Security (HTTPS only)
 					{
 						key: 'Strict-Transport-Security',
 						value: 'max-age=31536000; includeSubDomains; preload',
 					},
-					// Content Security Policy
 					{
 						key: 'Content-Security-Policy',
 						value: [
