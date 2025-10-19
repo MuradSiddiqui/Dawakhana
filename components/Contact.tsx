@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, User, Clock, Building, MessageCircle, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, User, Clock, Building, MessageCircle, Send, CheckCircle, AlertCircle, Facebook } from 'lucide-react';
 import { contact } from '../data/contact';
 
 export default function Contact() {
@@ -139,6 +139,21 @@ Sent from Mufeed e aam Dawakhana website`;
 								<div className="min-w-0 flex-1">
 									<p className="font-medium text-gray-900 group-hover:text-green-600">WhatsApp</p>
 									<p className="text-sm text-gray-500">Chat with us</p>
+								</div>
+							</a>
+							
+							<a 
+								href={contact.facebookUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+							>
+								<div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+									<Facebook className="h-4 w-4 text-blue-600" />
+								</div>
+								<div className="min-w-0 flex-1">
+									<p className="font-medium text-gray-900 group-hover:text-blue-600">Facebook</p>
+									<p className="text-sm text-gray-500">Follow us</p>
 								</div>
 							</a>
 							

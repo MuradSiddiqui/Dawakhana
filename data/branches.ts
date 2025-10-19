@@ -69,8 +69,8 @@ export const branches: Branch[] = [
 			{ day: 'Sun', open: 'Closed', close: 'Closed' },
 		],
 		imageUrl: '/images/branches/mirpurkhas.jpg',
-		gmapUrl: 'https://maps.app.goo.gl/uo7rv7dj614TVjYV6',
-		gmapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3600.316462219741!2d69.021498!3d25.5278335!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394eac19a6b7c0a7%3A0x9f4ccc2bd889b33e!2sMufeed-e-Aam%20Dawakhana!5e0!3m2!1sen!2sde!4v1759531414108!5m2!1sen!2sde',
+		gmapUrl: 'https://goo.gl/maps/D3QWnkKwoFsayPer8?g_st=aw',
+		gmapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3600.308525378242!2d69.01707707539266!3d25.528097977499403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDMxJzQxLjIiTiA2OcKwMDEnMTAuOCJF!5e0!3m2!1sen!2sde!4v1760914160872!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade',
 		facebookUrl: 'https://www.facebook.com/share/1QQQJiH4My/',
 	},
 	{

@@ -5,7 +5,7 @@ import BranchesGrid from '../components/BranchesGrid';
 import TimingsAndMaps from '../components/TimingsAndMaps';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import ScrollToTop from '../components/ScrollToTop';
+import FloatingButtons from '../components/FloatingButtons';
 
 export default function Page() {
 	return (
@@ -31,7 +31,7 @@ export default function Page() {
 				</div>
 			</main>
 			<Footer />
-			<ScrollToTop />
+			<FloatingButtons />
 		</div>
 	);
 } 

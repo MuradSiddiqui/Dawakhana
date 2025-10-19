@@ -29,8 +29,18 @@ export default function BranchSection({ branch }: Props) {
 					<a className="inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-rose-200 px-2 sm:px-4 py-2 text-rose-800 hover:bg-rose-50 transition-colors font-medium text-sm sm:text-base" href={`tel:${branch.phone.replace(/\s/g,'')}`} aria-label={`Call ${branch.city}`}>
 						<Phone className="h-3 w-3 sm:h-4 sm:w-4 phone-icon" /> <span className="hidden sm:inline">Call </span>{branch.phone}
 					</a>
-					<a className="inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-2 sm:px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm sm:text-base" href={branch.gmapUrl} target="_blank" rel="noopener noreferrer" aria-label={`Directions to ${branch.city}`}>
-						<MapPin className="h-3 w-3 sm:h-4 sm:w-4 location-icon" /> <span className="hidden sm:inline">Directions</span>
+					<a 
+						className="inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-2 sm:px-4 py-2 text-gray-700 hover:bg-gray-50 active:bg-gray-100 transition-colors font-medium text-sm sm:text-base touch-manipulation cursor-pointer" 
+						href={branch.gmapUrl} 
+						target="_blank" 
+						rel="noopener noreferrer" 
+						aria-label={`Directions to ${branch.city}`}
+						onClick={(e) => {
+							// Ensure the link works on mobile by preventing any interference
+							e.stopPropagation();
+						}}
+					>
+						<MapPin className="h-3 w-3 sm:h-4 sm:w-4 location-icon pointer-events-none" /> <span className="hidden sm:inline pointer-events-none">Directions</span>
 					</a>
 					{branch.email && (
 						<a className="inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-2 sm:px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm sm:text-base" href={`mailto:${branch.email}`}>
@@ -38,8 +48,17 @@ export default function BranchSection({ branch }: Props) {
 						</a>
 					)}
 					{branch.facebookUrl && (
-						<a className="inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-blue-200 px-2 sm:px-4 py-2 text-blue-700 hover:bg-blue-50 transition-colors font-medium text-sm sm:text-base" href={branch.facebookUrl} target="_blank" rel="noopener noreferrer">
-							<Facebook className="h-3 w-3 sm:h-4 sm:w-4 facebook-icon" /> <span className="hidden sm:inline">Facebook</span>
+						<a 
+							className="inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-blue-200 px-2 sm:px-4 py-2 text-blue-700 hover:bg-blue-50 active:bg-blue-100 transition-colors font-medium text-sm sm:text-base touch-manipulation cursor-pointer" 
+							href={branch.facebookUrl} 
+							target="_blank" 
+							rel="noopener noreferrer"
+							onClick={(e) => {
+								// Ensure the link works on mobile by preventing any interference
+								e.stopPropagation();
+							}}
+						>
+							<Facebook className="h-3 w-3 sm:h-4 sm:w-4 facebook-icon pointer-events-none" /> <span className="hidden sm:inline pointer-events-none">Facebook</span>
 						</a>
 					)}
 				</div>
@@ -126,12 +145,16 @@ export default function BranchSection({ branch }: Props) {
 									href={branch.gmapUrl}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="inline-flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1 bg-rose-600 text-white text-xs font-medium rounded-md sm:rounded-lg hover:bg-rose-700 transition-colors flex-shrink-0"
+									className="inline-flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1 bg-rose-600 text-white text-xs font-medium rounded-md sm:rounded-lg hover:bg-rose-700 active:bg-rose-800 transition-colors flex-shrink-0 touch-manipulation cursor-pointer"
+									onClick={(e) => {
+										// Ensure the link works on mobile by preventing any interference
+										e.stopPropagation();
+									}}
 								>
-									<svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<svg className="w-3 h-3 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 									</svg>
-									<span className="hidden sm:inline">Open</span>
+									<span className="hidden sm:inline pointer-events-none">Open</span>
 								</a>
 							</div>
 						</div>
