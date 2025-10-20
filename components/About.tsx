@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '../lib/LanguageContext';
 
 export default function About() {
@@ -21,9 +22,39 @@ export default function About() {
 					</section>
 				</div>
 				<div>
-					<figure className="aspect-[3/4] w-full rounded-2xl bg-gray-100 overflow-hidden shadow-xl">
-						<img src="/images/founder.jpg" alt="Hakeem Makhdoom Muhammad Murad Siddiqui" className="h-full w-full object-cover" />
-					</figure>
+					<div className="space-y-6">
+						<figure className="mx-auto max-w-[260px] rounded-2xl shadow-xl ring-1 ring-gray-200/60 bg-white">
+							<div className="rounded-2xl overflow-hidden">
+								<Image 
+									src="/images/founderco.jpeg" 
+									alt="Hakeem Muhammad Mohsin Siddiqui"
+									width={520}
+									height={693}
+									className="h-auto w-full object-cover"
+									priority
+								/>
+							</div>
+							<figcaption className="px-2 py-2 text-center">
+								<p className="text-sm font-semibold text-gray-900 leading-snug break-words">Hakeem Muhammad Mohsin Siddiqui</p>
+								<p className="text-xs text-gray-500">Clinic Director</p>
+							</figcaption>
+						</figure>
+						<figure className="mx-auto max-w-[260px] rounded-2xl shadow-xl ring-1 ring-gray-200/60 bg-white">
+							<div className="rounded-2xl overflow-hidden">
+								<Image 
+									src="/images/founder.jpg" 
+									alt="Hakeem Makhdoom Muhammad Murad Siddiqui"
+									width={520}
+									height={693}
+									className="h-auto w-full object-cover"
+								/>
+							</div>
+							<figcaption className="px-2 py-2 text-center">
+								<p className="text-sm font-semibold text-gray-900 leading-snug break-words">Hakeem Makhdoom Muhammad Murad Siddiqui</p>
+								<p className="text-xs text-gray-500">Founder</p>
+							</figcaption>
+						</figure>
+					</div>
 					<p className="mt-3 text-sm text-gray-500 text-center"> <code className="bg-gray-100 px-1 rounded"></code></p>
 				</div>
 			</div>
