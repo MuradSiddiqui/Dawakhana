@@ -7,7 +7,17 @@ export default function About() {
 	const { t, isRTL } = useLanguage();
 	
 	return (
-		<div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-xl border border-gray-100" dir={isRTL ? 'rtl' : 'ltr'}>
+		<div 
+			className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-xl border border-gray-100" 
+			dir={isRTL ? 'rtl' : 'ltr'}
+			onClick={(e) => {
+				// Prevent unwanted navigation when clicking on non-interactive elements
+				const target = e.target as HTMLElement;
+				if (target.tagName !== 'A' && target.tagName !== 'BUTTON' && !target.closest('a') && !target.closest('button')) {
+					e.stopPropagation();
+				}
+			}}
+		>
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 				<div className="md:col-span-2 space-y-8">
 					<section aria-labelledby="about-overview">

@@ -20,17 +20,33 @@ export default function BranchSection({ branch }: Props) {
 	const { t, isRTL } = useLanguage();
 	return (
 		<section id={branch.id} className="py-8 sm:py-12 border-t-2 border-gray-200 first:border-t-0" dir={isRTL ? 'rtl' : 'ltr'}>
-			<div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-gray-100 hover-lift group relative overflow-hidden">
+			<div 
+				className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-gray-100 hover-lift group relative overflow-hidden branch-section"
+				onClick={(e) => {
+					// Prevent unwanted navigation when clicking on non-interactive elements
+					const target = e.target as HTMLElement;
+					if (target.tagName !== 'A' && target.tagName !== 'BUTTON' && !target.closest('a') && !target.closest('button')) {
+						e.stopPropagation();
+					}
+				}}
+			>
 				
 				<div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-rose-100 to-rose-200 rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
 				<h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{branch.city}</h3>
 				<p className="text-base sm:text-lg text-gray-700 mb-4">{branch.address}</p>
 				<div className={`flex flex-wrap items-center gap-2 sm:gap-3 mb-6 ${isRTL ? 'flex-row-reverse justify-end' : ''}`}>
-					<a className={`inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-rose-200 px-2 sm:px-4 py-2 text-rose-800 hover:bg-rose-50 transition-colors font-medium text-sm sm:text-base ${isRTL ? 'flex-row-reverse' : ''}`} href={`tel:${branch.phone.replace(/\s/g,'')}`} aria-label={`Call ${branch.city}`}>
+					<a 
+						className={`inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-rose-200 px-2 sm:px-4 py-2 text-rose-800 hover:bg-rose-50 transition-colors font-medium text-sm sm:text-base ${isRTL ? 'flex-row-reverse' : ''}`} 
+						href={`tel:${branch.phone.replace(/\s/g,'')}`} 
+						aria-label={`Call ${branch.city}`}
+						onClick={(e) => {
+							e.stopPropagation();
+						}}
+					>
 						<Phone className="h-3 w-3 sm:h-4 sm:w-4" /> <span className="hidden sm:inline">{t('branches.call')} </span><span dir="ltr">{branch.phone}</span>
 					</a>
 					<a 
-						className={`inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-2 sm:px-4 py-2 text-gray-700 hover:bg-gray-50 active:bg-gray-100 transition-colors font-medium text-sm sm:text-base touch-manipulation cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
+						className={`inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-4 sm:px-4 py-4 sm:py-2 text-gray-700 hover:bg-gray-50 active:bg-gray-100 transition-colors font-medium text-sm sm:text-base touch-manipulation cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
 						href={branch.gmapUrl} 
 						target="_blank" 
 						rel="noopener noreferrer" 
@@ -43,13 +59,19 @@ export default function BranchSection({ branch }: Props) {
 						<MapPin className="h-3 w-3 sm:h-4 sm:w-4 pointer-events-none" /> <span className="hidden sm:inline pointer-events-none">{t('branches.directions')}</span>
 					</a>
 					{branch.email && (
-						<a className={`inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-2 sm:px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm sm:text-base ${isRTL ? 'flex-row-reverse' : ''}`} href={`mailto:${branch.email}`}>
+						<a 
+							className={`inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-2 sm:px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm sm:text-base ${isRTL ? 'flex-row-reverse' : ''}`} 
+							href={`mailto:${branch.email}`}
+							onClick={(e) => {
+								e.stopPropagation();
+							}}
+						>
 							<Mail className="h-3 w-3 sm:h-4 sm:w-4" /> <span className="hidden sm:inline">{branch.email}</span>
 						</a>
 					)}
 					{branch.facebookUrl && (
 						<a 
-							className={`inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-blue-200 px-2 sm:px-4 py-2 text-blue-700 hover:bg-blue-50 active:bg-blue-100 transition-colors font-medium text-sm sm:text-base touch-manipulation cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
+							className={`hidden md:inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-blue-200 px-2 sm:px-4 py-2 text-blue-700 hover:bg-blue-50 active:bg-blue-100 transition-colors font-medium text-sm sm:text-base touch-manipulation cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
 							href={branch.facebookUrl} 
 							target="_blank" 
 							rel="noopener noreferrer"
@@ -145,16 +167,16 @@ export default function BranchSection({ branch }: Props) {
 									href={branch.gmapUrl}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="inline-flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1 bg-rose-600 text-white text-xs font-medium rounded-md sm:rounded-lg hover:bg-rose-700 active:bg-rose-800 transition-colors flex-shrink-0 touch-manipulation cursor-pointer"
+									className="inline-flex items-center gap-2 px-3 py-2 sm:px-3 sm:py-1 bg-rose-600 text-white text-sm font-medium rounded-lg sm:rounded-lg hover:bg-rose-700 active:bg-rose-800 transition-colors flex-shrink-0 touch-manipulation cursor-pointer min-h-[44px]"
 									onClick={(e) => {
 										// Ensure the link works on mobile by preventing any interference
 										e.stopPropagation();
 									}}
 								>
-									<svg className="w-3 h-3 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<svg className="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 									</svg>
-									<span className="hidden sm:inline pointer-events-none">Open</span>
+									<span className="inline sm:inline pointer-events-none">Open</span>
 								</a>
 							</div>
 						</div>

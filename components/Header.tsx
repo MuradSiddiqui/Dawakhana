@@ -58,8 +58,8 @@ export default function Header() {
 					</svg>
 				</button>
 			</div>
-			<div className={`md:hidden transition-all duration-300 overflow-visible ${
-				open ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+			<div className={`md:hidden transition-all duration-300 ${
+				open ? 'max-h-[700px] opacity-100 pointer-events-auto' : 'max-h-0 opacity-0 overflow-hidden pointer-events-none'
 			}`}>
 				<div className="border-t border-gray-200 bg-white/95 backdrop-blur-md shadow-lg">
                         <div className="container-site py-6 flex flex-col gap-4">

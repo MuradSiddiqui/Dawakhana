@@ -5,7 +5,17 @@ export default function Hero() {
 	const { t, isRTL } = useLanguage();
 	
 	return (
-		<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-50 via-white to-rose-50 relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
+		<div 
+			className="min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-50 via-white to-rose-50 relative overflow-hidden" 
+			dir={isRTL ? 'rtl' : 'ltr'}
+			onClick={(e) => {
+				// Prevent unwanted navigation when clicking on non-interactive elements
+				const target = e.target as HTMLElement;
+				if (target.tagName !== 'A' && target.tagName !== 'BUTTON' && !target.closest('a') && !target.closest('button')) {
+					e.stopPropagation();
+				}
+			}}
+		>
 			
 			<div className="absolute inset-0 opacity-5">
 				<div className="absolute top-20 left-10 w-32 h-32 bg-rose-200 rounded-full blur-3xl"></div>
