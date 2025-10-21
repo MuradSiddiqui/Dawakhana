@@ -38,34 +38,79 @@ p {
 /* RTL Support */
 [dir="rtl"] {
 	direction: rtl;
+}
+
+/* RTL Text alignment - be specific to avoid breaking layouts */
+[dir="rtl"] p,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] label {
 	text-align: right;
 }
 
-/* RTL Flex and Grid adjustments */
-[dir="rtl"] .flex {
-	flex-direction: row-reverse;
+/* Keep centered elements centered */
+[dir="rtl"] .text-center,
+[dir="rtl"] [class*="text-center"],
+[dir="rtl"] [class*="justify-center"] {
+	text-align: center;
 }
 
+/* Override text alignment for specific classes */
+.text-left {
+	text-align: left !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+/* Ensure numbers and emails stay LTR */
+[dir="ltr"] {
+	direction: ltr;
+	text-align: left;
+}
+
+/* RTL Input field styling */
+[dir="rtl"] input[type="text"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] textarea {
+	text-align: right;
+}
+
+/* Override for specific LTR inputs */
+input[dir="ltr"],
+textarea[dir="ltr"] {
+	text-align: left !important;
+}
+
+/* RTL placeholder text alignment */
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+	text-align: right;
+}
+
+/* RTL Flex adjustments - only reverse horizontal flex */
 [dir="rtl"] .flex-row {
 	flex-direction: row-reverse;
 }
 
+/* Keep column flex as is */
 [dir="rtl"] .flex-col {
 	flex-direction: column;
 }
 
-/* RTL Text alignment */
-[dir="rtl"] .text-left {
-	text-align: right;
-}
-
-[dir="rtl"] .text-right {
-	text-align: left;
-}
-
-/* Ensure text-center works properly with RTL */
-[dir="rtl"] .text-center {
-	text-align: center;
+/* Reverse gap positioning for flex items */
+[dir="rtl"] .gap-2,
+[dir="rtl"] .gap-3,
+[dir="rtl"] .gap-4,
+[dir="rtl"] .gap-6,
+[dir="rtl"] .gap-8 {
+	direction: rtl;
 }
 
 /* Hero section centering */
@@ -96,6 +141,27 @@ p {
 	margin-left: auto;
 }
 
+/* RTL Padding adjustments for better spacing */
+[dir="rtl"] .pl-2 {
+	padding-left: 0;
+	padding-right: 0.5rem;
+}
+
+[dir="rtl"] .pr-2 {
+	padding-right: 0;
+	padding-left: 0.5rem;
+}
+
+[dir="rtl"] .pl-4 {
+	padding-left: 0;
+	padding-right: 1rem;
+}
+
+[dir="rtl"] .pr-4 {
+	padding-right: 0;
+	padding-left: 1rem;
+}
+
 /* RTL Border radius */
 [dir="rtl"] .rounded-l {
 	border-top-left-radius: 0;
@@ -111,22 +177,8 @@ p {
 	border-bottom-left-radius: 0.25rem;
 }
 
-/* RTL Icon fixes */
-[dir="rtl"] .phone-icon {
-	transform: scaleX(-1);
-}
-
-[dir="rtl"] .location-icon {
-	transform: scaleX(-1);
-}
-
-[dir="rtl"] .mail-icon {
-	transform: scaleX(-1);
-}
-
-[dir="rtl"] .facebook-icon {
-	transform: scaleX(-1);
-}
+/* Don't flip icons - they should remain in their original orientation */
+/* Icons are universally understood and shouldn't be mirrored */
 
 .container-site {
 	@apply max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto;

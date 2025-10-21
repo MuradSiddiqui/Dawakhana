@@ -1,6 +1,11 @@
+'use client';
+import { useLanguage } from '../lib/LanguageContext';
+
 export default function Hero() {
+	const { t, isRTL } = useLanguage();
+	
 	return (
-		<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-50 via-white to-rose-50 relative overflow-hidden">
+		<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-rose-50 via-white to-rose-50 relative overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
 			
 			<div className="absolute inset-0 opacity-5">
 				<div className="absolute top-20 left-10 w-32 h-32 bg-rose-200 rounded-full blur-3xl"></div>
@@ -41,23 +46,23 @@ export default function Hero() {
 				</div>
 				
 				
-				<div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-slide-up" style={{ animationDelay: '0.6s' }}>
+				<div className={`flex flex-col sm:flex-row items-center justify-center gap-6 animate-slide-up ${isRTL ? 'sm:flex-row-reverse' : ''}`} style={{ animationDelay: '0.6s' }}>
 					<a 
 						href="#branches" 
-						className="group inline-flex items-center gap-3 rounded-xl border-2 border-gray-300 px-8 py-4 text-gray-800 hover:bg-white hover:border-gray-400 hover:shadow-lg transition-all duration-300 font-semibold text-lg transform hover:-translate-y-1"
+						className={`group inline-flex items-center gap-3 rounded-xl border-2 border-gray-300 px-8 py-4 text-gray-800 hover:bg-white hover:border-gray-400 hover:shadow-lg transition-all duration-300 font-semibold text-lg transform hover:-translate-y-1 ${isRTL ? 'flex-row-reverse' : ''}`}
 					>
-						<span>Find a Branch</span>
-						<svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<span>{t('hero.findBranch')}</span>
+						<svg className={`w-5 h-5 transition-transform ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
 							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
 						</svg>
 					</a>
 					<a 
 						href="#contact" 
-						className="group inline-flex items-center gap-3 rounded-xl border-2 px-8 py-4 text-white bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-700 hover:to-rose-800 border-rose-600 hover:shadow-xl transition-all duration-300 font-semibold text-lg transform hover:-translate-y-1"
+						className={`group inline-flex items-center gap-3 rounded-xl border-2 px-8 py-4 text-white bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-700 hover:to-rose-800 border-rose-600 hover:shadow-xl transition-all duration-300 font-semibold text-lg transform hover:-translate-y-1 ${isRTL ? 'flex-row-reverse' : ''}`}
 					>
-						<span>Contact Us</span>
-						<svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<span>{t('hero.contactUs')}</span>
+						<svg className={`w-5 h-5 transition-transform ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 						</svg>
 					</a>

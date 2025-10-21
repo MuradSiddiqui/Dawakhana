@@ -2,10 +2,12 @@
 import { useState, useEffect } from 'react';
 import NavLink from './NavLink';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from '../lib/LanguageContext';
 
 export default function Header() {
 	const [open, setOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
+	const { t, isRTL } = useLanguage();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -20,9 +22,9 @@ export default function Header() {
 			scrolled 
 				? 'bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xl' 
 				: 'bg-white/80 backdrop-blur-sm border-b border-gray-100 shadow-lg'
-		}`}>
-			<div className="container-site flex items-center justify-between h-20">
-				<a href="/" className="flex items-center gap-3 group cursor-pointer">
+		}`} dir={isRTL ? 'rtl' : 'ltr'}>
+			<div className={`container-site flex items-center justify-between h-20 ${isRTL ? 'flex-row-reverse' : ''}`}>
+				<a href="/" className={`flex items-center gap-3 group cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}>
 					<div className="relative">
 						<img src="/logo.png" alt="Mufeed e aam Dawakhana" className="h-11 w-11 rounded-xl group-hover:shadow-xl transition-all duration-300" />
 						<div className="absolute -inset-1 bg-gradient-to-r from-rose-400 to-rose-600 rounded-xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
@@ -31,11 +33,11 @@ export default function Header() {
 						Mufeed e aam Dawakhana
 					</span>
 				</a>
-                        <nav className="hidden md:flex items-center gap-2">
-                            <NavLink href="#about">About</NavLink>
-                            <NavLink href="#branches">Branches</NavLink>
-                            <NavLink href="#timings-maps">Timings & Maps</NavLink>
-                            <NavLink href="#contact">Contact</NavLink>
+                        <nav className={`hidden md:flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                            <NavLink href="#about">{t('nav.about')}</NavLink>
+                            <NavLink href="#branches">{t('nav.branches')}</NavLink>
+                            <NavLink href="#timings-maps">{t('nav.timings')}</NavLink>
+                            <NavLink href="#contact">{t('nav.contact')}</NavLink>
                             <LanguageSwitcher />
                         </nav>
 				<button
@@ -61,15 +63,15 @@ export default function Header() {
 			}`}>
 				<div className="border-t border-gray-200 bg-white/95 backdrop-blur-md shadow-lg">
                         <div className="container-site py-6 flex flex-col gap-4">
-                            <NavLink href="#about" onClick={() => setOpen(false)}>About</NavLink>
-                            <NavLink href="#branches" onClick={() => setOpen(false)}>Branches</NavLink>
-                            <NavLink href="#timings-maps" onClick={() => setOpen(false)}>Timings & Maps</NavLink>
-                            <NavLink href="#contact" onClick={() => setOpen(false)}>Contact</NavLink>
+                            <NavLink href="#about" onClick={() => setOpen(false)}>{t('nav.about')}</NavLink>
+                            <NavLink href="#branches" onClick={() => setOpen(false)}>{t('nav.branches')}</NavLink>
+                            <NavLink href="#timings-maps" onClick={() => setOpen(false)}>{t('nav.timings')}</NavLink>
+                            <NavLink href="#contact" onClick={() => setOpen(false)}>{t('nav.contact')}</NavLink>
                             
                             {/* Language Switcher Section */}
                             <div className="pt-4 border-t border-gray-200 pb-4">
-                                <div className="flex items-center justify-between mb-3">
-                                    <span className="text-sm font-medium text-gray-600">Language</span>
+                                <div className={`flex items-center ${isRTL ? 'justify-start' : 'justify-between'} mb-3`}>
+                                    <span className="text-sm font-medium text-gray-600">{isRTL ? 'زبان' : 'Language'}</span>
                                 </div>
                                 <div className="relative z-50">
                                     <LanguageSwitcher onLanguageChange={() => setOpen(false)} />
