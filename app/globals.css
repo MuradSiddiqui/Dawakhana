@@ -30,9 +30,21 @@ p {
 
 /* Urdu/Arabic text styling */
 [lang="ur"], .font-urdu {
-	font-family: var(--font-urdu), serif;
-	line-height: 1.8;
-	letter-spacing: 0.01em;
+	font-family: var(--font-urdu), 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+	line-height: 2;
+	letter-spacing: 0;
+	word-spacing: 0.05em;
+	/* Mobile Safari text rendering optimizations */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	/* Font feature settings for proper Urdu rendering */
+	font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'ccmp' 1, 'locl' 1, 'mark' 1, 'mkmk' 1;
+	-webkit-font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'ccmp' 1, 'locl' 1, 'mark' 1, 'mkmk' 1;
+	-moz-font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'ccmp' 1, 'locl' 1, 'mark' 1, 'mkmk' 1;
+	/* Prevent text distortion */
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
 }
 
 /* RTL Support */
@@ -284,6 +296,46 @@ textarea[dir="ltr"] {
 
 ::-webkit-scrollbar-thumb:hover {
 	background: #be185d;
+}
+
+/* Mobile-specific Urdu font rendering fixes */
+@media screen and (max-width: 768px) {
+	/* Enhanced Urdu text rendering on mobile */
+	[lang="ur"], .font-urdu, [dir="rtl"] {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+		font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'ccmp' 1, 'locl' 1, 'mark' 1, 'mkmk' 1, 'curs' 1;
+		-webkit-font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'ccmp' 1, 'locl' 1, 'mark' 1, 'mkmk' 1, 'curs' 1;
+		line-height: 2.2;
+		word-spacing: 0.08em;
+		letter-spacing: 0;
+		/* Prevent text distortion on mobile */
+		-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+		text-size-adjust: 100%;
+		/* Better character rendering */
+		font-synthesis: none;
+		-webkit-font-synthesis: none;
+		-moz-font-synthesis: none;
+	}
+	
+	/* Specific fix for RTL headings */
+	[dir="rtl"] h1, 
+	[dir="rtl"] h2, 
+	[dir="rtl"] h3, 
+	[dir="rtl"] h4 {
+		line-height: 2;
+		word-break: keep-all;
+		overflow-wrap: normal;
+	}
+	
+	/* Specific fix for RTL paragraphs */
+	[dir="rtl"] p {
+		line-height: 2.2;
+		word-break: keep-all;
+		overflow-wrap: normal;
+	}
 }
 
 /* Mobile touch event fixes */

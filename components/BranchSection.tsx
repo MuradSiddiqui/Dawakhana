@@ -46,7 +46,7 @@ export default function BranchSection({ branch }: Props) {
 						<Phone className="h-3 w-3 sm:h-4 sm:w-4" /> <span className="hidden sm:inline">{t('branches.call')} </span><span dir="ltr">{branch.phone}</span>
 					</a>
 					<a 
-						className={`inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-4 sm:px-4 py-4 sm:py-2 text-gray-700 hover:bg-gray-50 active:bg-gray-100 transition-colors font-medium text-sm sm:text-base touch-manipulation cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
+						className={`inline-flex items-center gap-1 sm:gap-2 rounded-lg border-2 border-gray-300 px-2 sm:px-4 py-2 sm:py-2 text-gray-700 hover:bg-gray-50 active:bg-gray-100 transition-colors font-medium text-sm sm:text-base touch-manipulation cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
 						href={branch.gmapUrl} 
 						target="_blank" 
 						rel="noopener noreferrer" 

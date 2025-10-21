@@ -16,6 +16,8 @@ const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
 	weight: ['400', '500', '600', '700'],
 	display: 'swap',
 	variable: '--font-urdu',
+	preload: true,
+	adjustFontFallback: true,
 });
 
 const siteUrl = 'https://dawakhanaa.pk';
