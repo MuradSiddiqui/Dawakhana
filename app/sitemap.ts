@@ -1,10 +1,20 @@
 import type { MetadataRoute } from 'next';
+import { getBlogPosts } from '../lib/notion';
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const base = 'https://dawakhanaa.pk';
 	const lastModified = new Date();
+
+	// Get blog posts
+	const blogPosts = await getBlogPosts();
+	const blogUrls = blogPosts.map((post) => ({
+		url: base + `/blog/${post.slug}`,
+		lastModified: new Date(post.updatedAt),
+		changeFrequency: 'weekly' as const,
+		priority: 0.8,
+	}));
 
 	return [
 		{ 
@@ -61,5 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: 'monthly', 
 			priority: 0.7 
 		},
+		{ 
+			url: base + '/blog', 
+			lastModified,
+			changeFrequency: 'weekly', 
+			priority: 0.9 
+		},
+		...blogUrls,
 	];
 } 
