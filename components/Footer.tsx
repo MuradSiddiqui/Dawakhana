@@ -45,6 +45,9 @@ export default function Footer() {
 							<a href="#timings-maps" className={`text-gray-600 hover:text-rose-700 font-medium transition-colors duration-300 transform text-sm sm:text-base ${isRTL ? 'hover:-translate-x-1' : 'hover:translate-x-1'}`}>
 								{t('nav.timings')}
 							</a>
+							<a href="/blog" className={`text-gray-600 hover:text-rose-700 font-medium transition-colors duration-300 transform text-sm sm:text-base ${isRTL ? 'hover:-translate-x-1' : 'hover:translate-x-1'}`}>
+								{t('nav.blog')}
+							</a>
 							<a href="#contact" className={`text-gray-600 hover:text-rose-700 font-medium transition-colors duration-300 transform text-sm sm:text-base ${isRTL ? 'hover:-translate-x-1' : 'hover:translate-x-1'}`}>
 								{t('nav.contact')}
 							</a>

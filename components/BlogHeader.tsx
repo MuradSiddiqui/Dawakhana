@@ -1,10 +1,9 @@
 "use client";
 import { useState, useEffect } from 'react';
 import NavLink from './NavLink';
-import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '../lib/LanguageContext';
 
-export default function Header() {
+export default function BlogHeader() {
 	const [open, setOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 	const { t, isRTL } = useLanguage();
@@ -33,14 +32,14 @@ export default function Header() {
 						Mufeed e aam Dawakhana
 					</span>
 				</a>
-                        <nav className={`hidden md:flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                            <NavLink href="#about">{t('nav.about')}</NavLink>
-                            <NavLink href="#branches">{t('nav.branches')}</NavLink>
-                            <NavLink href="#timings-maps">{t('nav.timings')}</NavLink>
-                            <NavLink href="/blog">{t('nav.blog')}</NavLink>
-                            <NavLink href="#contact">{t('nav.contact')}</NavLink>
-                            <LanguageSwitcher />
-                        </nav>
+                
+                <nav className={`hidden md:flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <NavLink href="/#about">{t('nav.about')}</NavLink>
+                    <NavLink href="/#branches">{t('nav.branches')}</NavLink>
+                    <NavLink href="/#timings-maps">{t('nav.timings')}</NavLink>
+                    <NavLink href="/#contact">{t('nav.contact')}</NavLink>
+                </nav>
+                
 				<button
 					className={`md:hidden inline-flex items-center justify-center rounded-xl border-2 px-4 py-2 transition-all duration-300 ${
 						open 
@@ -63,25 +62,14 @@ export default function Header() {
 				open ? 'max-h-[700px] opacity-100 pointer-events-auto' : 'max-h-0 opacity-0 overflow-hidden pointer-events-none'
 			}`}>
 				<div className="border-t border-gray-200 bg-white/95 backdrop-blur-md shadow-lg">
-                        <div className="container-site py-6 flex flex-col gap-4">
-                            <NavLink href="#about" onClick={() => setOpen(false)}>{t('nav.about')}</NavLink>
-                            <NavLink href="#branches" onClick={() => setOpen(false)}>{t('nav.branches')}</NavLink>
-                            <NavLink href="#timings-maps" onClick={() => setOpen(false)}>{t('nav.timings')}</NavLink>
-                            <NavLink href="/blog" onClick={() => setOpen(false)}>{t('nav.blog')}</NavLink>
-                            <NavLink href="#contact" onClick={() => setOpen(false)}>{t('nav.contact')}</NavLink>
-                            
-                            {/* Language Switcher Section */}
-                            <div className="pt-4 border-t border-gray-200 pb-4">
-                                <div className={`flex items-center ${isRTL ? 'justify-start' : 'justify-between'} mb-3`}>
-                                    <span className="text-sm font-medium text-gray-600">{isRTL ? 'زبان' : 'Language'}</span>
-                                </div>
-                                <div className="relative z-50">
-                                    <LanguageSwitcher onLanguageChange={() => setOpen(false)} />
-                                </div>
-                            </div>
-                        </div>
+                    <div className="container-site py-6 flex flex-col gap-4">
+                        <NavLink href="/#about" onClick={() => setOpen(false)}>{t('nav.about')}</NavLink>
+                        <NavLink href="/#branches" onClick={() => setOpen(false)}>{t('nav.branches')}</NavLink>
+                        <NavLink href="/#timings-maps" onClick={() => setOpen(false)}>{t('nav.timings')}</NavLink>
+                        <NavLink href="/#contact" onClick={() => setOpen(false)}>{t('nav.contact')}</NavLink>
+                    </div>
 				</div>
 			</div>
 		</header>
 	);
-} 
+}

@@ -4,6 +4,7 @@ export const translations = {
       about: 'About',
       branches: 'Branches', 
       timings: 'Timings & Maps',
+      blog: 'Blog',
       contact: 'Contact'
     },
     
@@ -95,6 +96,7 @@ export const translations = {
       about: 'ہمارے متعلق',
       branches: 'شاخیں',
       timings: 'اوقات اور نقشے',
+      blog: 'بلاگ',
       contact: 'رابطہ'
     },
     

@@ -4,7 +4,6 @@ const nextConfig = {
 	experimental: {
 		optimizePackageImports: ['lucide-react'],
 	},
-	output: 'export',
 	images: {
 		unoptimized: true,
 	},
