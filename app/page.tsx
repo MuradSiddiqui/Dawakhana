@@ -6,10 +6,12 @@ import TimingsAndMaps from '../components/TimingsAndMaps';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FloatingButtons from '../components/FloatingButtons';
+import HappyNewYearGif from '../components/HappyNewYearGif';
 
 export default function Page() {
 	return (
 		<div>
+			<HappyNewYearGif />
 			<Header />
 			<main>
 				<section id="home">
