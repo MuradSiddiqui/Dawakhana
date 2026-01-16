@@ -6,12 +6,15 @@ import TimingsAndMaps from '../components/TimingsAndMaps';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FloatingButtons from '../components/FloatingButtons';
-import HappyNewYearGif from '../components/HappyNewYearGif';
+import EventGif from '../components/EventGif';
+// import HappyNewYearGif from '../components/HappyNewYearGif'; // Archived - kept for reference
 
 export default function Page() {
 	return (
 		<div>
-			<HappyNewYearGif />
+			{/* Event GIF - Configure in lib/eventGifConfig.ts */}
+			<EventGif />
+			{/* <HappyNewYearGif /> */} {/* Archived - use EventGif instead */}
 			<Header />
 			<main>
 				<section id="home">

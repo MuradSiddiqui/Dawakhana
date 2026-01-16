@@ -2,8 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { eventGifConfig } from '../lib/eventGifConfig';
 
-export default function HappyNewYearGif() {
+
+export default function EventGif() {
+	// Don't render if disabled in config
+	if (!eventGifConfig.enabled) {
+		return null;
+	}
+
 	const [isVisible, setIsVisible] = useState(true);
 	const [isClosing, setIsClosing] = useState(false);
 
@@ -17,7 +24,7 @@ export default function HappyNewYearGif() {
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			handleClose();
-		}, 5000); // 5 seconds
+		}, eventGifConfig.displayDuration);
 
 		return () => clearTimeout(timer);
 	}, []);
@@ -77,8 +84,8 @@ export default function HappyNewYearGif() {
 				{/* GIF Container with subtle animation */}
 				<div className="relative animate-pulse-slow">
 					<Image
-						src="/Happy New Year Hello GIF.gif"
-						alt="Happy New Year"
+						src={eventGifConfig.gifPath}
+						alt={eventGifConfig.altText}
 						width={800}
 						height={600}
 						className="max-w-full h-auto rounded-xl shadow-2xl border-4 border-white/20"
