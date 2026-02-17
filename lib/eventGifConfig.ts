@@ -20,36 +20,9 @@ export interface EventGifConfig {
 
 // Set enabled: true to show the GIF, false to hide it
 export const eventGifConfig: EventGifConfig = {
-	enabled: false, // 👈 Change to true to enable
-	gifPath: '/Happy New Year Hello GIF.gif',
-	altText: 'Happy New Year',
+	enabled: true,
+	gifPath: '/Ramadan Rotterdam GIF by Albeda mbo.gif',
+	altText: 'Ramadan Mubarak',
 	displayDuration: 5000, // 5 seconds
 };
-
-
-// Uncomment and use these when needed, or create your own
-
-// For EID Mubarak:
-// export const eventGifConfig: EventGifConfig = {
-// 	enabled: true,
-// 	gifPath: '/EID Mubarak GIF.gif', // Add your EID GIF to public folder
-// 	altText: 'EID Mubarak',
-// 	displayDuration: 5000,
-// };
-
-// For Ramazan Mubarak:
-// export const eventGifConfig: EventGifConfig = {
-// 	enabled: true,
-// 	gifPath: '/Ramazan Mubarak GIF.gif', // Add your Ramazan GIF to public folder
-// 	altText: 'Ramazan Mubarak',
-// 	displayDuration: 5000,
-// };
-
-// For any other event:
-// export const eventGifConfig: EventGifConfig = {
-// 	enabled: true,
-// 	gifPath: '/Your Event GIF.gif', // Add your GIF to public folder
-// 	altText: 'Your Event Name',
-// 	displayDuration: 5000,
-// };
 
