@@ -21,8 +21,8 @@ export interface EventGifConfig {
 // Set enabled: true to show the GIF, false to hide it
 export const eventGifConfig: EventGifConfig = {
 	enabled: true,
-	gifPath: '/Ramadan Rotterdam GIF by Albeda mbo.gif',
-	altText: 'Ramadan Mubarak',
+	gifPath: '/Eid Mubarak.gif',
+	altText: 'Eid Mubarak',
 	displayDuration: 5000, // 5 seconds
 };
 
