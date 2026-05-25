@@ -48,13 +48,13 @@ export default function EventGif() {
 
 	return (
 		<div
-			className={`fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-md transition-opacity duration-300 ${
+			className={`fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-3 backdrop-blur-md transition-opacity duration-300 ${
 				isClosing ? 'opacity-0' : 'opacity-100'
 			}`}
 			onClick={handleClose}
 		>
 			<div
-				className={`relative max-w-[90vw] max-h-[90vh] p-4 md:p-6 transition-all duration-300 ${
+				className={`relative w-full max-w-4xl transition-all duration-300 ${
 					isClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
 				}`}
 				onClick={(e) => e.stopPropagation()}
@@ -81,23 +81,35 @@ export default function EventGif() {
 					</svg>
 				</button>
 
-				{/* GIF Container with subtle animation */}
-				<div className="relative animate-pulse-slow">
+				<div className="max-h-[90vh] overflow-y-auto rounded-2xl bg-white/95 p-3 shadow-2xl md:p-5">
+					{eventGifConfig.noticeImagePath && (
+						<div className="mb-4">
+							<Image
+								src={eventGifConfig.noticeImagePath}
+								alt={eventGifConfig.noticeAltText || 'Holiday notice'}
+								width={900}
+								height={1200}
+								className="h-auto w-full rounded-xl border border-gray-200 shadow-lg"
+								priority
+							/>
+						</div>
+					)}
+
 					<Image
 						src={eventGifConfig.gifPath}
 						alt={eventGifConfig.altText}
 						width={800}
 						height={600}
-						className="max-w-full h-auto rounded-xl shadow-2xl border-4 border-white/20"
+						className="mx-auto h-auto max-w-full rounded-xl border-4 border-white/20 shadow-2xl"
 						unoptimized
 						priority
 					/>
-				</div>
 
-				{/* Subtle hint text */}
-				<p className="text-white/80 text-sm text-center mt-4 font-light animate-fade-in">
-					Click anywhere to close
-				</p>
+					{/* Subtle hint text */}
+					<p className="mt-4 text-center text-sm font-light text-gray-600 animate-fade-in">
+						This notice will close automatically in 1 minute, or click anywhere to close
+					</p>
+				</div>
 			</div>
 		</div>
 	);
