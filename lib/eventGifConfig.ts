@@ -20,9 +20,9 @@ export interface EventGifConfig {
 
 // Set enabled: true to show the GIF, false to hide it
 export const eventGifConfig: EventGifConfig = {
-	enabled: false,
-	gifPath: '/Eid Mubarak.gif',
-	altText: 'Eid Mubarak',
+	enabled: true,
+	gifPath: '/images/Eid Ul Adha GIF.gif',
+	altText: 'Eid Ul Adha Mubarak',
 	displayDuration: 5000, // 5 seconds
 };
 
