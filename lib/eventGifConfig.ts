@@ -22,7 +22,7 @@ export interface EventGifConfig {
 
 // Set enabled: true to show the GIF, false to hide it
 export const eventGifConfig: EventGifConfig = {
-	enabled: true,
+	enabled: false,
 	noticeImagePath: '/images/holdiay.png',
 	noticeAltText: 'Eid Ul Adha holiday notice',
 	gifPath: '/images/Eid Ul Adha GIF.gif',
