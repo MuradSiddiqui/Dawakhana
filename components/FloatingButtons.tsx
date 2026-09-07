@@ -30,7 +30,7 @@ export default function FloatingButtons() {
 	const openWhatsApp = () => {
 		const raw = contact.mainPhone.replace(/[^0-9]/g, '');
 		const wa = raw.startsWith('0') ? `92${raw.slice(1)}` : (raw.startsWith('92') ? raw : `92${raw}`);
-		const whatsappUrl = `https://wa.me/${wa}?text=${encodeURIComponent('Assalamualaikum, I would like to inquire.')}`;
+		const whatsappUrl = `https://wa.me/${wa}?text=${encodeURIComponent('Assalamualaikum, May i call you on whatsaap?')}`;
 		window.open(whatsappUrl, '_blank');
 	};
 

@@ -18,7 +18,7 @@ export default function Contact() {
 
 	const raw = contact.mainPhone.replace(/[^0-9]/g, '');
 	const wa = raw.startsWith('0') ? `92${raw.slice(1)}` : (raw.startsWith('92') ? raw : `92${raw}`);
-	const waLink = `https://wa.me/${wa}?text=${encodeURIComponent('Assalamualaikum, I would like to inquire.')}`;
+	const waLink = `https://wa.me/${wa}?text=${encodeURIComponent('Assalamualaikum, May i call you on whatsaap?')}`;
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value } = e.target;
