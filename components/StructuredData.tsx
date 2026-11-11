@@ -44,14 +44,14 @@ export default function StructuredData() {
 					{
 						"@type": "OpeningHoursSpecification",
 						"dayOfWeek": "Monday",
-						"opens": "12:00",
-						"closes": "18:00"
+						"opens": "13:00",
+						"closes": "17:00"
 					},
 					{
 						"@type": "OpeningHoursSpecification",
 						"dayOfWeek": "Sunday",
-						"opens": "12:00",
-						"closes": "15:00"
+						"opens": "13:00",
+						"closes": "17:00"
 					}
 				]
 			},
